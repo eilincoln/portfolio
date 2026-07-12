@@ -2,14 +2,14 @@
 
 > const dev = { name: 'Lincoln', status: 'coding' };
 
-Repositório oficial do meu portfólio pessoal e corporativo. Desenvolvido com uma abordagem minimalista, foco em semântica e uma identidade visual lógica inspirada no universo geek.
+Repositório oficial do meu portfólio pessoal e corporativo. Desenvolvido com uma abordagem minimalista, foco em semântica estrutural e uma identidade visual lógica inspirada no universo geek e no Sheldon Cooper.
 
 ---
 
 ## 🛠️ Tecnologias Utilizadas
 
-- **HTML5:** Estrutura e semântica de página única.
-- **CSS3:** Variáveis nativas, Flexbox e CSS Grid para layouts simétricos.
+- **HTML5:** Estrutura semântica e otimizações de acessibilidade/SEO.
+- **CSS3:** Variáveis nativas, Flexbox e CSS Grid para layouts responsivos.
 - **Git & GitHub:** Controle de versão e histórico estruturado de commits.
 
 ## ⚙️ Diretório de Projetos
@@ -30,4 +30,4 @@ Para iniciar projetos freelancer ou consultorias técnicas:
 
 ---
 
-_⚡ System.status = "Optimized";_
+_⚡ console.log("Obrigado pela visita.");_
