@@ -282,3 +282,55 @@ section {
   color: var(--text-muted);
   font-weight: bold;
 }
+
+/* Contato */
+.contact-container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+
+.contact h2 {
+  font-family: var(--font-geek);
+  font-size: 2rem;
+  color: var(--primary-color);
+  margin-bottom: 20px;
+}
+
+.contact-subtitle {
+  font-size: 1.15rem;
+  color: var(--text-muted);
+  margin-bottom: 40px;
+  max-width: 700px;
+}
+
+/* Alinhamento dos blocos de contato */
+.contact-links {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  max-width: 500px;
+}
+
+/* Links estilo linhas de comando executáveis */
+.contact-item {
+  font-family: var(--font-geek);
+  font-size: 1.1rem;
+  color: var(--text-color);
+  text-decoration: none;
+  padding: 12px 20px;
+  border: 2px solid #e2e8f0;
+  transition: all 0.2s ease;
+  display: flex;
+  gap: 10px;
+}
+
+.contact-item:hover {
+  border-color: var(--primary-color);
+  background-color: rgba(30, 41, 59, 0.02);
+}
+
+/* Prefixo em destaque (ex: GIT:, LKD:) */
+.protocol {
+  color: var(--accent-color);
+  font-weight: bold;
+}
