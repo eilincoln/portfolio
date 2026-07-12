@@ -40,7 +40,7 @@ body {
   justify-content: space-between;
   align-items: center;
   padding: 30px 20px;
-  border-bottom: 3px dotted #cbd5e1; /* Linha de grade matemática */
+  border-bottom: 3px dotted #cbd5e1;
 }
 
 .logo {
@@ -66,7 +66,7 @@ body {
 /* Seções Gerais */
 section {
   padding: 100px 20px;
-  border-bottom: 1px dashed #e2e8f0;
+  border-bottom: 3px dashed #e2e8f0;
 }
 
 /* Hero */
@@ -157,6 +157,32 @@ section {
 .btn-secondary:hover {
   background-color: var(--primary-color);
   color: white;
+}
+
+/* About */
+.about-container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+
+.about h2 {
+  font-family: var(--font-geek);
+  font-size: 2rem;
+  color: var(--primary-color);
+  margin-bottom: 30px;
+}
+
+.about-text p {
+  font-size: 1.15rem;
+  color: var(--text-muted);
+  margin-bottom: 20px;
+  max-width: 800px;
+}
+
+/* Destaca a primeira palavra ou frase */
+.about-text p::first-letter {
+  font-weight: bold;
+  color: var(--primary-color);
 }
 
 @media (max-width: 768px) {
