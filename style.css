@@ -200,6 +200,14 @@ section {
 }
 
 /* Projetos */
+
+/* Badge de status ativo para desenvolvimento */
+.project-status.badge-dev {
+  color: var(--accent-color);
+  border-color: var(--accent-color);
+  background-color: rgba(245, 158, 11, 0.05);
+}
+
 .projects-container {
   max-width: var(--max-width);
   margin: 0 auto;
