@@ -12,43 +12,35 @@
        aparecendo primeiro.
 
    status aceito: "stable" | "building" | "null"
+
+   Campos opcionais:
+     - image:  caminho da capa do projeto (ex: "img/projeto-pic.png").
+               Se omitido, o card renderiza sem capa (como os placeholders).
+     - link:   URL do projeto no ar. Se omitido, o card não mostra o botão
+               de acesso (útil para os placeholders "Project_0X.log").
+     - github: URL do repositório no GitHub. Se omitido, o card não mostra
+               o botão "Ver código" (use apenas em projetos com repo público
+               — não use em projetos de cliente).
    ========================================================================== */
 
 export const projects = [
   {
-    title: "A Era Artificial",
-    status: "building",
+    title: "Escuta e Cuida",
+    status: "stable",
     description:
-      "Landing page responsiva desenvolvida do zero para consolidar meus conhecimentos práticos. Focada em estrutura semântica e estilização avançada.",
+      "Plataforma digital de saúde mental voltada aos profissionais de uma UBS. Oferece acesso a atendimento psicológico online e remoto a valor social, promovendo bem-estar, acolhimento e qualidade de vida no ambiente de trabalho.",
     tags: ["#HTML", "#CSS"],
+    image: "./img/capas-de-projetos/escuta-e-cuida.png",
+    link: "https://lincolnberto.com/meus-projetos/escutaecuida/",
   },
   {
-    title: "Project_02.log",
-    status: "null",
+    title: "A Nova Era",
+    status: "stable",
     description:
-      "Um novo projeto em breve... Módulo reservado para a primeira aplicação utilizando lógica de programação pura.",
-    tags: ["#JavaScript"],
+      "Landing page do livro 'A Nova Era'. Desenvolvido no curso da DevMedia.",
+    tags: ["#HTML", "#CSS"],
+    image: "./img/capas-de-projetos/preview-desktop.png",
+    link: "https://lincolnberto.com/meus-projetos/a-era-artificial/",
+    github: "https://github.com/eilincoln/a-era-artificial",
   },
-  {
-    title: "Project_03.log",
-    status: "null",
-    description:
-      "Espaço reservado para o desenvolvimento de componentes modernos e expansão do ecossistema front-end.",
-    tags: ["#React"],
-  },
-  {
-    title: "Project_04.log",
-    status: "null",
-    description:
-      "Slot vago no servidor local. Próxima automação de interface ou integração de API programada para este bloco.",
-    tags: ["#API_Rest"],
-  },
-
-  // 👉 Exemplo de como vai ficar quando você adicionar "A Nova Era" amanhã:
-  // {
-  //   title: "A Nova Era",
-  //   status: "building",
-  //   description: "Landing page do livro 'A Nova Era'.",
-  //   tags: ["#HTML", "#CSS", "#JavaScript"],
-  // },
 ];

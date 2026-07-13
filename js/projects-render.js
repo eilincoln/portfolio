@@ -25,6 +25,20 @@ function createProjectCard(project) {
   article.className =
     "project-card reveal" + (project.status === "null" ? " placeholder" : "");
 
+  // Capa do projeto (opcional).
+  if (project.image) {
+    const cover = document.createElement("div");
+    cover.className = "project-cover";
+
+    const img = document.createElement("img");
+    img.src = project.image;
+    img.alt = project.title;
+    img.loading = "lazy";
+
+    cover.appendChild(img);
+    article.appendChild(cover);
+  }
+
   const statusClass = STATUS_CLASSES[project.status] ?? "";
   const statusLabel = STATUS_LABELS[project.status] ?? "Null";
 
@@ -52,7 +66,38 @@ function createProjectCard(project) {
   });
 
   article.append(header, description, tagsWrapper);
+
+  // Botões de ação (opcionais): acessar o projeto no ar e/ou ver o código-fonte.
+  if (project.link || project.github) {
+    const actions = document.createElement("div");
+    actions.className = "project-actions";
+
+    if (project.link) {
+      actions.appendChild(
+        createActionLink(project.link, "Acessar projeto →", "btn-primary"),
+      );
+    }
+
+    if (project.github) {
+      actions.appendChild(
+        createActionLink(project.github, "Ver código", "btn-secondary"),
+      );
+    }
+
+    article.appendChild(actions);
+  }
+
   return article;
+}
+
+function createActionLink(href, label, variant) {
+  const link = document.createElement("a");
+  link.className = `project-link btn ${variant}`;
+  link.href = href;
+  link.target = "_blank";
+  link.rel = "noopener noreferrer";
+  link.textContent = label;
+  return link;
 }
 
 /**
