@@ -40,6 +40,7 @@ body {
   align-items: center;
   padding: 30px 20px;
   border-bottom: 3px dotted #cbd5e1;
+  position: relative;
 }
 
 .logo {
@@ -47,6 +48,10 @@ body {
   font-weight: bold;
   font-size: 1.5rem;
   color: var(--primary-color);
+}
+
+.nav {
+  display: flex; /* Menu em linha no desktop */
 }
 
 .nav a {
@@ -67,6 +72,50 @@ body {
   color: var(--accent-color);
   text-decoration: underline;
   text-underline-offset: 4px;
+}
+
+/* Botão Hambúrguer (Escondido por padrão no computador) */
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 1.8rem;
+  color: var(--primary-color);
+  cursor: pointer;
+  font-family: var(--font-geek);
+}
+
+/* ==========================================================================
+   ALGORITMO RESPONSIVO: TELAS ATÉ 768px (CELULARES)
+   ========================================================================== */
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: block;
+  }
+
+  .nav {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: var(--bg-color);
+    border-bottom: 3px solid var(--primary-color);
+    padding: 20px;
+    z-index: 1000;
+    gap: 15px;
+  }
+
+  .nav a {
+    margin-left: 0;
+    font-size: 1.1rem;
+    display: block;
+    padding: 5px 0;
+  }
+  .nav.open {
+    display: flex;
+  }
 }
 
 /* Seções Gerais */
