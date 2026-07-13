@@ -1,0 +1,7 @@
+/* ==========================================================================
+   ARQUIVO MESTRE - PROTOCOLO DE IMPORTAÇÃO CENTRALIZADA
+   ========================================================================== */
+
+@import "global.css"; /* Carrega a base, variáveis, header e footer */
+@import "index.css"; /* Carrega os estilos exclusivos da página Home */
+@import "sobre.css"; /* Carrega os estilos exclusivos da página Sobre */
