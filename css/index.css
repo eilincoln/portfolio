@@ -101,7 +101,7 @@
 }
 
 .project-card {
-  background-color: #ffffff;
+  background-color: var(--card-bg);
   border: 3px solid var(--primary-color);
   padding: 30px;
   display: flex;
@@ -151,13 +151,19 @@
   padding: 2px 8px;
   border: 1px solid var(--primary-color);
   color: var(--text-muted);
-  border-color: #cbd5e1;
+  border-color: var(--border-color-strong);
 }
 
 .project-status.badge-dev {
   color: var(--accent-color);
   border-color: var(--accent-color);
   background-color: rgba(245, 158, 11, 0.05);
+}
+
+.project-status.badge-stable {
+  color: var(--primary-color);
+  border-color: var(--primary-color);
+  background-color: rgba(30, 41, 59, 0.05);
 }
 
 .project-card p {
@@ -212,7 +218,7 @@
   color: var(--text-color);
   text-decoration: none;
   padding: 12px 20px;
-  border: 2px solid #e2e8f0;
+  border: 2px solid var(--border-color);
   transition: all 0.2s ease;
   display: flex;
   gap: 10px;
@@ -220,7 +226,7 @@
 
 .contact-item:hover {
   border-color: var(--primary-color);
-  background-color: rgba(30, 41, 59, 0.02);
+  background-color: rgba(148, 163, 184, 0.08);
 }
 
 .protocol {
@@ -269,7 +275,7 @@
 }
 
 .skill-box {
-  background: #ffffff;
+  background: var(--card-bg);
   border: 3px solid var(--primary-color);
   padding: 25px;
   text-align: center;

@@ -6,47 +6,74 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Serviços profissionais de desenvolvimento front-end, criação de sites e consultoria digital por Lincoln Berto.">
   <title>Serviços | Lincoln Berto</title>
+  <link rel="canonical" href="https://lincolnberto.com/servicos.html">
   <link rel="icon" type="image/svg+xml" href="img/favicon.svg">
+
+  <!-- Open Graph / Compartilhamento em redes sociais -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Serviços | Lincoln Berto">
+  <meta property="og:description" content="Serviços profissionais de desenvolvimento front-end, criação de sites e consultoria digital por Lincoln Berto.">
+  <meta property="og:image" content="https://lincolnberto.com/img/og-image.png">
+  <meta property="og:url" content="https://lincolnberto.com/servicos.html">
+  <meta property="og:locale" content="pt_BR">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Serviços | Lincoln Berto">
+  <meta name="twitter:description" content="Serviços profissionais de desenvolvimento front-end, criação de sites e consultoria digital por Lincoln Berto.">
+  <meta name="twitter:image" content="https://lincolnberto.com/img/og-image.png">
+
+  <!-- Aplica o tema salvo ANTES da renderização, evitando flash de tela clara -->
+  <script>
+    (function () {
+      if (localStorage.getItem("theme") === "dark") {
+        document.documentElement.setAttribute("data-theme", "dark");
+      }
+    })();
+  </script>
+
   <link rel="stylesheet" href="css/main.css">
 </head>
 
 <body>
 
+  <a href="#main-content" class="skip-link">Pular para o conteúdo</a>
+
   <header class="header">
     <div class="logo">LB</div>
 
-    <button class="menu-toggle" aria-label="Abrir Menu">☰</button>
-
-    <nav class="nav">
-      <a href="index.html">Home</a>
-      <a href="sobre.html">Sobre</a>
-      <a href="servicos.html" class="active">Serviços</a>
-      <a href="projetos.html">Projetos</a>
-      <a href="index.html#contact">Contato</a>
-    </nav>
+    <div class="header-right">
+      <nav class="nav">
+        <a href="index.html">Home</a>
+        <a href="sobre.html">Sobre</a>
+        <a href="servicos.html" class="active">Serviços</a>
+        <a href="projetos.html">Projetos</a>
+        <a href="index.html#contact">Contato</a>
+      </nav>
+      <button class="theme-toggle" aria-label="Alternar tema claro/escuro">🌙</button>
+      <button class="menu-toggle" aria-label="Abrir Menu">☰</button>
+    </div>
   </header>
 
-  <main>
+  <main id="main-content">
     <section class="services-page">
       <div class="services-container">
-        <h1>// Protocolos_De_Serviço_Freelancer</h1>
+        <h1>// Protocolos De Serviço Freelancer</h1>
         <p class="services-intro">Soluções digitais construídas com lógica computacional rígida, organização de código e foco na melhor experiência para o usuário:</p>
 
         <div class="services-list">
 
-          <div class="service-card">
+          <div class="service-card reveal">
             <div class="service-meta">ID: 01 // STABLE</div>
             <h3>Criação de Landing Pages</h3>
             <p>Desenvolvimento de páginas de alta conversão para produtos, serviços ou lançamentos. Código totalmente responsivo (perfeito no celular e no desktop) utilizando HTML5 semântico e otimização para motores de busca (SEO).</p>
           </div>
 
-          <div class="service-card">
+          <div class="service-card reveal">
             <div class="service-meta">ID: 02 // STABLE</div>
             <h3>Portfólios e Sites Institucionais</h3>
             <p>Construção da presença digital completa para profissionais e pequenas empresas. Interfaces limpas, organizadas, rápidas de carregar e com arquitetura modular fácil de expandir.</p>
           </div>
 
-          <div class="service-card">
+          <div class="service-card reveal">
             <div class="service-meta">ID: 03 // OPTIMIZATION</div>
             <h3>Manutenção e Otimização Web</h3>
             <p>Análise detalhada de sites existentes para correção de bugs de layout (CSS), melhoria de performance no carregamento de páginas e reestruturação de código para boas práticas modernas.</p>
@@ -54,7 +81,7 @@
 
         </div>
 
-        <div class="workflow-section">
+        <div class="workflow-section reveal">
           <h3>[ Algoritmo de Trabalho ]</h3>
           <ol class="workflow-steps">
             <li><strong>Briefing:</strong> Alinhamento lógico dos requisitos do projeto.</li>

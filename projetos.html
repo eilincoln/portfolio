@@ -6,83 +6,61 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Diretório completo de projetos, repositórios e experimentos em Front-end desenvolvidos por Lincoln Berto.">
   <title>Projetos | Lincoln Berto</title>
+  <link rel="canonical" href="https://lincolnberto.com/projetos.html">
   <link rel="icon" type="image/svg+xml" href="img/favicon.svg">
+
+  <!-- Open Graph / Compartilhamento em redes sociais -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Projetos | Lincoln Berto">
+  <meta property="og:description" content="Diretório completo de projetos, repositórios e experimentos em Front-end desenvolvidos por Lincoln Berto.">
+  <meta property="og:image" content="https://lincolnberto.com/img/og-image.png">
+  <meta property="og:url" content="https://lincolnberto.com/projetos.html">
+  <meta property="og:locale" content="pt_BR">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Projetos | Lincoln Berto">
+  <meta name="twitter:description" content="Diretório completo de projetos, repositórios e experimentos em Front-end desenvolvidos por Lincoln Berto.">
+  <meta name="twitter:image" content="https://lincolnberto.com/img/og-image.png">
+
+  <!-- Aplica o tema salvo ANTES da renderização, evitando flash de tela clara -->
+  <script>
+    (function () {
+      if (localStorage.getItem("theme") === "dark") {
+        document.documentElement.setAttribute("data-theme", "dark");
+      }
+    })();
+  </script>
+
   <link rel="stylesheet" href="css/main.css">
 </head>
 
 <body>
 
+  <a href="#main-content" class="skip-link">Pular para o conteúdo</a>
+
   <header class="header">
     <div class="logo">LB</div>
 
-    <button class="menu-toggle" aria-label="Abrir Menu">☰</button>
-
-    <nav class="nav">
-      <a href="index.html">Home</a>
-      <a href="sobre.html">Sobre</a>
-      <a href="servicos.html">Serviços</a>
-      <a href="projetos.html" class="active">Projetos</a>
-      <a href="index.html#contact">Contato</a>
-    </nav>
+    <div class="header-right">
+      <nav class="nav">
+        <a href="index.html">Home</a>
+        <a href="sobre.html">Sobre</a>
+        <a href="servicos.html">Serviços</a>
+        <a href="projetos.html" class="active">Projetos</a>
+        <a href="index.html#contact">Contato</a>
+      </nav>
+      <button class="theme-toggle" aria-label="Alternar tema claro/escuro">🌙</button>
+      <button class="menu-toggle" aria-label="Abrir Menu">☰</button>
+    </div>
   </header>
 
-  <main>
+  <main id="main-content">
     <section class="projects-page">
       <div class="projects-container">
-        <h1>// Diretório_Completo_De_Projetos</h1>
+        <h1>// Diretório Completo De Projetos</h1>
         <p class="projects-intro">O histórico matemático de soluções, landing pages e testes lógicos compilados até o momento atual:</p>
 
-        <div class="projects-grid">
-
-          <!-- Card 1: Seu Projeto Principal -->
-          <article class="project-card">
-            <div class="project-header">
-              <h3>A Era Artificial</h3>
-              <span class="project-status badge-dev">Building</span>
-            </div>
-            <p>Landing page responsiva desenvolvida do zero para consolidar meus conhecimentos práticos. Focada em estrutura semântica e estilização avançada.</p>
-            <div class="project-tags">
-              <span>#HTML</span>
-              <span>#CSS</span>
-            </div>
-          </article>
-
-          <!-- Card 2: Placeholder Técnico 1 -->
-          <article class="project-card placeholder">
-            <div class="project-header">
-              <h3>Project_02.log</h3>
-              <span class="project-status">Null</span>
-            </div>
-            <p>Um novo projeto em breve... Módulo reservado para a primeira aplicação utilizando lógica de programação pura.</p>
-            <div class="project-tags">
-              <span>#JavaScript</span>
-            </div>
-          </article>
-
-          <!-- Card 3: Placeholder Técnico 2 -->
-          <article class="project-card placeholder">
-            <div class="project-header">
-              <h3>Project_03.log</h3>
-              <span class="project-status">Null</span>
-            </div>
-            <p>Espaço reservado para o desenvolvimento de componentes modernos e expansão do ecossistema front-end.</p>
-            <div class="project-tags">
-              <span>#React</span>
-            </div>
-          </article>
-
-          <!-- Card 4: Novo Slot de Expansão -->
-          <article class="project-card placeholder">
-            <div class="project-header">
-              <h3>Project_04.log</h3>
-              <span class="project-status">Null</span>
-            </div>
-            <p>Slot vago no servidor local. Próxima automação de interface ou integração de API programada para este bloco.</p>
-            <div class="project-tags">
-              <span>#API_Rest</span>
-            </div>
-          </article>
-
+        <div class="projects-grid" id="all-projects-grid">
+          <!-- Cards gerados dinamicamente por js/projects-render.js (lista completa) -->
         </div> <!-- Fim do projects-grid -->
 
         <!-- SEÇÃO INSERIDA AQUI: Botão de ação integrado -->

@@ -6,33 +6,60 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Saiba mais sobre a trajetória, formação e competências técnicas de Lincoln Berto em TI e Desenvolvimento Front-end.">
   <title>Sobre Mim | Lincoln Berto</title>
+  <link rel="canonical" href="https://lincolnberto.com/sobre.html">
   <link rel="icon" type="image/svg+xml" href="img/favicon.svg">
+
+  <!-- Open Graph / Compartilhamento em redes sociais -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Sobre Mim | Lincoln Berto">
+  <meta property="og:description" content="Saiba mais sobre a trajetória, formação e competências técnicas de Lincoln Berto em TI e Desenvolvimento Front-end.">
+  <meta property="og:image" content="https://lincolnberto.com/img/og-image.png">
+  <meta property="og:url" content="https://lincolnberto.com/sobre.html">
+  <meta property="og:locale" content="pt_BR">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Sobre Mim | Lincoln Berto">
+  <meta name="twitter:description" content="Saiba mais sobre a trajetória, formação e competências técnicas de Lincoln Berto em TI e Desenvolvimento Front-end.">
+  <meta name="twitter:image" content="https://lincolnberto.com/img/og-image.png">
+
+  <!-- Aplica o tema salvo ANTES da renderização, evitando flash de tela clara -->
+  <script>
+    (function () {
+      if (localStorage.getItem("theme") === "dark") {
+        document.documentElement.setAttribute("data-theme", "dark");
+      }
+    })();
+  </script>
+
   <link rel="stylesheet" href="css/main.css">
 
 </head>
 
 <body>
 
+  <a href="#main-content" class="skip-link">Pular para o conteúdo</a>
+
   <header class="header">
     <div class="logo">LB</div>
 
-    <button class="menu-toggle" aria-label="Abrir Menu">☰</button>
-
-    <nav class="nav">
-      <a href="index.html">Home</a>
-      <a href="sobre.html" class="active">Sobre</a>
-      <a href="servicos.html">Serviços</a>
-      <a href="projetos.html">Projetos</a>
-      <a href="index.html#contact">Contato</a>
-    </nav>
+    <div class="header-right">
+      <nav class="nav">
+        <a href="index.html">Home</a>
+        <a href="sobre.html" class="active">Sobre</a>
+        <a href="servicos.html">Serviços</a>
+        <a href="projetos.html">Projetos</a>
+        <a href="index.html#contact">Contato</a>
+      </nav>
+      <button class="theme-toggle" aria-label="Alternar tema claro/escuro">🌙</button>
+      <button class="menu-toggle" aria-label="Abrir Menu">☰</button>
+    </div>
   </header>
 
-  <main>
+  <main id="main-content">
     <section class="about-page">
       <div class="about-container">
-        <h1>// Trajetória_E_Competências</h1>
+        <h1>// Trajetória E Competências</h1>
 
-        <div class="about-text">
+        <div class="about-text reveal">
           <p>Minha jornada na tecnologia começou na área de infraestrutura e suporte, onde atuo como Responsável Técnico de TI. Lidar diariamente com servidores, redes e a consistência de bancos de dados PostgreSQL me deu uma disciplina analítica rígida: aprendi a depurar erros com método, entender a arquitetura dos sistemas e focar na resolução definitiva de problemas.</p>
 
           <p>Essa mentalidade lógica me atraiu naturalmente para o Desenvolvimento Front-end. Criar interfaces não é apenas alinhar elementos visualmente, mas traduzir regras de negócio complexas em código limpo, semântico e performático.</p>

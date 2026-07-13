@@ -6,6 +6,34 @@
   --accent-color: #f59e0b;
   --max-width: 1100px;
   --font-geek: "Courier New", Courier, monospace;
+
+  /* Tokens de tema (ajustados no modo escuro abaixo) */
+  --border-color: #e2e8f0;
+  --border-color-strong: #cbd5e1;
+  --card-bg: #ffffff;
+  --btn-primary-bg: var(--primary-color);
+  --btn-primary-text: #ffffff;
+  --btn-primary-hover-bg: #0f172a;
+  --btn-secondary-hover-text: #ffffff;
+}
+
+/* ==========================================================================
+   PROTOCOLO DE TEMA ESCURO
+   ========================================================================== */
+[data-theme="dark"] {
+  --bg-color: #0b1220;
+  --text-color: #e5e9f0;
+  --text-muted: #94a3b8;
+  --primary-color: #cbd5e1;
+  --accent-color: #f59e0b;
+
+  --border-color: #334155;
+  --border-color-strong: #475569;
+  --card-bg: #131b2e;
+  --btn-primary-bg: var(--accent-color);
+  --btn-primary-text: #0f172a;
+  --btn-primary-hover-bg: #d97706;
+  --btn-secondary-hover-text: #0f172a;
 }
 
 * {
@@ -29,6 +57,49 @@ body {
   background-color: var(--bg-color);
   color: var(--text-color);
   line-height: 1.6;
+  transition: background-color 0.25s ease, color 0.25s ease;
+}
+
+/* Link de acessibilidade: pula direto para o conteúdo (útil para teclado/leitor de tela) */
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  top: 0;
+  background-color: var(--primary-color);
+  color: white;
+  padding: 12px 20px;
+  z-index: 2000;
+  font-family: var(--font-geek);
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.skip-link:focus {
+  left: 10px;
+  top: 10px;
+}
+
+/* Agrupa nav + botões de controle à direita do header */
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+/* Botão de alternância de tema claro/escuro */
+.theme-toggle {
+  background: none;
+  border: 2px solid var(--border-color-strong);
+  font-size: 1.1rem;
+  line-height: 1;
+  padding: 6px 10px;
+  cursor: pointer;
+  border-radius: 0px;
+  transition: border-color 0.2s ease;
+}
+
+.theme-toggle:hover {
+  border-color: var(--accent-color);
 }
 
 /* Header & Nav */
@@ -39,7 +110,7 @@ body {
   justify-content: space-between;
   align-items: center;
   padding: 30px 20px;
-  border-bottom: 3px dotted #cbd5e1;
+  border-bottom: 3px dotted var(--border-color-strong);
   position: relative;
 }
 
@@ -121,7 +192,7 @@ body {
 /* Seções Gerais */
 section {
   padding: 100px 20px;
-  border-bottom: 3px dashed #e2e8f0;
+  border-bottom: 3px dashed var(--border-color);
 }
 
 /* Botões Globais */
@@ -137,14 +208,14 @@ section {
 }
 
 .btn-primary {
-  background-color: var(--primary-color);
-  color: white;
-  border: 2px solid var(--primary-color);
+  background-color: var(--btn-primary-bg);
+  color: var(--btn-primary-text);
+  border: 2px solid var(--btn-primary-bg);
 }
 
 .btn-primary:hover {
-  background-color: #0f172a;
-  border-color: #0f172a;
+  background-color: var(--btn-primary-hover-bg);
+  border-color: var(--btn-primary-hover-bg);
 }
 
 .btn-secondary {
@@ -154,7 +225,7 @@ section {
 
 .btn-secondary:hover {
   background-color: var(--primary-color);
-  color: white;
+  color: var(--btn-secondary-hover-text);
 }
 
 /* Footer */
@@ -182,6 +253,28 @@ section {
   font-size: 0.85rem !important;
   color: var(--accent-color);
   font-weight: bold;
+}
+
+/* ==========================================================================
+   ANIMAÇÃO DE ENTRADA AO ROLAR (SCROLL REVEAL)
+   ========================================================================== */
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
 }
 
 /* ==========================================================================

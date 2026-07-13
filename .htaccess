@@ -1,0 +1,4 @@
+# Direciona páginas não encontradas para a 404 personalizada.
+# Necessário apenas se a hospedagem usar Apache e não detectar
+# automaticamente o arquivo 404.html.
+ErrorDocument 404 /404.html
