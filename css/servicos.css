@@ -1,0 +1,84 @@
+/* Estilos da Página servicos.html */
+.services-container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+
+.services-page h2 {
+  font-family: var(--font-geek);
+  font-size: 2rem;
+  color: var(--primary-color);
+  margin-bottom: 20px;
+}
+
+.services-intro {
+  font-size: 1.15rem;
+  color: var(--text-muted);
+  margin-bottom: 40px;
+  max-width: 800px;
+}
+
+.services-list {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  margin-bottom: 50px;
+}
+
+.service-card {
+  background: #ffffff;
+  border: 3px solid var(--primary-color);
+  padding: 30px;
+  position: relative;
+}
+
+.service-meta {
+  font-family: var(--font-geek);
+  font-size: 0.8rem;
+  color: var(--accent-color);
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.service-card h3 {
+  font-family: var(--font-geek);
+  font-size: 1.4rem;
+  color: var(--primary-color);
+  margin-bottom: 12px;
+}
+
+.service-card p {
+  font-size: 1.05rem;
+  color: var(--text-muted);
+  text-align: justify;
+}
+
+/* Fluxo de Trabalho (Algoritmo) */
+.workflow-section {
+  margin-bottom: 50px;
+  background-color: rgba(30, 41, 59, 0.02);
+  border: 3px dashed #cbd5e1;
+  padding: 40px;
+}
+
+.workflow-section h3 {
+  font-family: var(--font-geek);
+  font-size: 1.4rem;
+  color: var(--primary-color);
+  margin-bottom: 25px;
+}
+
+.workflow-steps {
+  padding-left: 20px;
+}
+
+.workflow-steps li {
+  font-size: 1.1rem;
+  color: var(--text-muted);
+  margin-bottom: 15px;
+}
+
+.workflow-steps li strong {
+  color: var(--primary-color);
+  font-family: var(--font-geek);
+}

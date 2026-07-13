@@ -5,3 +5,4 @@
 @import "global.css"; /* Carrega a base, variáveis, header e footer */
 @import "index.css"; /* Carrega os estilos exclusivos da página Home */
 @import "sobre.css"; /* Carrega os estilos exclusivos da página Sobre */
+@import "servicos.css"; /* Carrega os estilos exclusivos da página de Serviços */

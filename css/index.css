@@ -242,3 +242,60 @@
     display: none;
   }
 }
+
+/* Seção de Habilidades */
+.skills-container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+
+.skills h2 {
+  font-family: var(--font-geek);
+  font-size: 2rem;
+  color: var(--primary-color);
+  margin-bottom: 20px;
+}
+
+.skills-subtitle {
+  font-size: 1.15rem;
+  color: var(--text-muted);
+  margin-bottom: 40px;
+}
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+}
+
+.skill-box {
+  background: #ffffff;
+  border: 3px solid var(--primary-color);
+  padding: 25px;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.skill-box:hover {
+  border-color: var(--accent-color);
+  transform: translateY(-4px);
+  box-shadow: 4px 4px 0px rgba(245, 158, 11, 0.1);
+}
+
+.skill-icon {
+  font-size: 2rem;
+  display: block;
+  margin-bottom: 15px;
+}
+
+.skill-box h3 {
+  font-family: var(--font-geek);
+  font-size: 1.2rem;
+  margin-bottom: 8px;
+  color: var(--primary-color);
+}
+
+.skill-box p {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+}
