@@ -31,7 +31,7 @@ export const projects = [
       "Plataforma digital de saúde mental voltada aos profissionais de uma UBS. Oferece acesso a atendimento psicológico online e remoto a valor social, promovendo bem-estar, acolhimento e qualidade de vida no ambiente de trabalho.",
     tags: ["#HTML", "#CSS"],
     image: "./img/capas-de-projetos/escuta-e-cuida.png",
-    link: "https://lincolnberto.com/meus-projetos/escutaecuida/",
+    link: "https://lincolnberto.com/meus-projetos/escuta-e-cuida/",
   },
   {
     title: "A Nova Era",
