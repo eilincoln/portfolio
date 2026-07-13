@@ -3,6 +3,13 @@
   padding: 100px 20px;
 }
 
+.projects-page h1 {
+  font-family: var(--font-geek);
+  font-size: 2rem;
+  color: var(--primary-color);
+  margin-bottom: 20px;
+}
+
 .projects-intro {
   font-size: 1.15rem;
   color: var(--text-muted);

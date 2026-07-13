@@ -1,4 +1,11 @@
 /* Estilos Específicos para a Página Interna sobre.html */
+.about-page h1 {
+  font-family: var(--font-geek);
+  font-size: 2rem;
+  color: var(--primary-color);
+  margin-bottom: 30px;
+}
+
 .about-text h3 {
   font-family: var(--font-geek);
   font-size: 1.4rem;

@@ -4,7 +4,7 @@
   margin: 0 auto;
 }
 
-.services-page h2 {
+.services-page h1 {
   font-family: var(--font-geek);
   font-size: 2rem;
   color: var(--primary-color);
@@ -81,4 +81,20 @@
 .workflow-steps li strong {
   color: var(--primary-color);
   font-family: var(--font-geek);
+}
+
+/* --- Ajustes de Segurança Mobile para Serviços --- */
+@media (max-width: 400px) {
+  .services-page h1 {
+    font-size: 1.5rem !important; /* Encolhe o título principal */
+  }
+
+  .service-card {
+    padding: 20px !important; /* Reduz o recuo interno para o texto ganhar espaço */
+    border-width: 2px !important; /* Afina levemente a borda para ficar mais elegante */
+  }
+
+  .workflow-section {
+    padding: 20px !important; /* Ajusta o bloco do algoritmo de trabalho */
+  }
 }

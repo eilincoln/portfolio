@@ -14,4 +14,13 @@ export function initMenuResponsivo() {
       menuToggle.textContent = "☰";
     }
   });
+
+  // Fecha o menu automaticamente ao clicar em qualquer link (útil para âncoras
+  // internas como #hero e #contact, que não recarregam a página)
+  navMenu.querySelectorAll("a").forEach((link) => {
+    link.addEventListener("click", () => {
+      navMenu.classList.remove("open");
+      menuToggle.textContent = "☰";
+    });
+  });
 }

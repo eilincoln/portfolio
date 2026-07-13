@@ -203,4 +203,13 @@ section {
     flex-direction: column; /* Empilha os botões da Hero */
     width: 100%;
   }
+
+  h2,
+  .about-page h1,
+  .services-page h1,
+  .projects-page h1 {
+    font-size: 1.4rem !important;
+    word-break: break-word;
+    overflow-wrap: break-word;
+  }
 }
