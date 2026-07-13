@@ -389,3 +389,41 @@ section {
   text-align: justify;
   text-justify: inter-word;
 }
+
+/* pagina .sobre.html */
+
+.about-text h3 {
+  font-family: var(--font-geek);
+  font-size: 1.4rem;
+  color: var(--primary-color);
+  margin: 35px 0 15px 0;
+}
+
+.skills-list {
+  list-style-type: none;
+  margin-bottom: 25px;
+  padding-left: 5px;
+}
+
+.skills-list li {
+  font-size: 1.1rem;
+  color: var(--text-muted);
+  margin-bottom: 12px;
+  position: relative;
+  padding-left: 25px;
+}
+
+.skills-list li::before {
+  content: ">";
+  position: absolute;
+  left: 0;
+  color: var(--accent-color);
+  font-family: var(--font-geek);
+  font-weight: bold;
+}
+
+.nav a.active {
+  color: var(--accent-color);
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
