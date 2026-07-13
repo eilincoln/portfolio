@@ -1,0 +1,11 @@
+/* Estilos Exclusivos da Página projetos.html */
+.projects-page {
+  padding: 100px 20px;
+}
+
+.projects-intro {
+  font-size: 1.15rem;
+  color: var(--text-muted);
+  margin-bottom: 40px;
+  max-width: 800px;
+}

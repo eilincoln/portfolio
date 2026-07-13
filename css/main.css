@@ -6,3 +6,4 @@
 @import "index.css"; /* Carrega os estilos exclusivos da página Home */
 @import "sobre.css"; /* Carrega os estilos exclusivos da página Sobre */
 @import "servicos.css"; /* Carrega os estilos exclusivos da página de Serviços */
+@import "projetos.css"; /* Carrega os estilos da página inteira de projetos */
