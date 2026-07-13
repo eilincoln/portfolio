@@ -299,3 +299,31 @@
   font-size: 0.9rem;
   color: var(--text-muted);
 }
+
+@media (max-width: 400px) {
+  .hero h1 {
+    font-size: 2rem !important; /* Diminui o tamanho do seu nome para não quebrar linha bruscamente */
+  }
+
+  .projects h2,
+  .about h2,
+  .skills h2,
+  .contact h2 {
+    font-size: 1.6rem !important; /* Ajusta os títulos de seção */
+  }
+
+  .projects-grid {
+    grid-template-columns: 1fr !important; /* Garante coluna única estrita nos cards */
+  }
+
+  .contact-item {
+    font-size: 0.85rem !important; /* Diminui o texto para caber na caixa */
+    padding: 10px 12px !important; /* Reduz o espaço interno da caixa */
+    flex-wrap: wrap; /* Se o link for gigante, ele desce a linha inteira de forma limpa */
+    word-break: break-all; /* Proteção extrema para links não estourarem a borda */
+  }
+
+  .contact-links {
+    max-width: 100% !important; /* Garante que a lista não passe da largura do celular */
+  }
+}

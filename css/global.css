@@ -183,3 +183,24 @@ section {
   color: var(--accent-color);
   font-weight: bold;
 }
+
+/* ==========================================================================
+   PROTOCOLO DE SEGURANÇA PARA DISPOSITIVOS EXTREMAMENTE PEQUENOS (< 360px)
+   ========================================================================== */
+@media (max-width: 360px) {
+  section {
+    padding: 60px 10px !important; /* Reduz o recuo lateral para o texto ganhar espaço */
+  }
+
+  .btn {
+    padding: 12px 16px !important; /* Enxuga o tamanho dos botões */
+    font-size: 0.8rem !important;
+    width: 100%; /* Força os botões a ficarem um abaixo do outro se necessário */
+    text-align: center;
+  }
+
+  .hero-buttons {
+    flex-direction: column; /* Empilha os botões da Hero */
+    width: 100%;
+  }
+}
