@@ -56,6 +56,7 @@ body {
   margin-left: 20px;
   font-weight: 600;
   font-family: var(--font-geek);
+  transition: color 0.2s ease;
 }
 
 .nav a:hover {
@@ -133,9 +134,9 @@ section {
   font-weight: bold;
   font-family: var(--font-geek);
   text-transform: uppercase;
-  transition: all 0.2s ease;
   border-radius: 0px;
   font-size: 0.9rem;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .btn-primary {
@@ -360,4 +361,31 @@ section {
   font-size: 0.85rem !important;
   color: var(--accent-color);
   font-weight: bold;
+}
+
+.project-card {
+  transition:
+    transform 0.3s ease,
+    border-color 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.project-card:hover {
+  border-color: var(--accent-color);
+  transform: translateY(-4px); /* Eleva o card levemente */
+  box-shadow: 6px 6px 0px rgba(245, 158, 11, 0.1); /* Sombra em bloco/geométrica */
+}
+
+/* Ajuste para o Hover dos cards que ainda estão em Null/Dashed */
+.project-card.placeholder:hover {
+  border-color: var(--text-muted);
+  transform: none;
+  box-shadow: none;
+}
+
+/* Melhoria na legibilidade dos parágrafos do Sobre Mim */
+.about-text p {
+  max-width: 750px;
+  text-align: justify;
+  text-justify: inter-word;
 }
