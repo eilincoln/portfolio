@@ -43,4 +43,14 @@ export const projects = [
     link: "https://lincolnberto.com/meus-projetos/a-era-artificial/",
     github: "https://github.com/eilincoln/a-era-artificial",
   },
+  {
+    title: "Imobiliária Santos",
+    status: "stable",
+    description:
+      "Página institucional simples para uma imobiliária desenvolvida exclusivamente com HTML5 e CSS3. Projeto criado com o objetivo de praticar estruturação de tags, estilização básica, alinhamento de elementos e versionamento de código com Git/GitHub. (PS: Ainda não trabalhei responsividade neste projeto)",
+    tags: ["#HTML", "#CSS"],
+    image: "./img/capas-de-projetos/imobiliaria-santos.png",
+    link: "https://imobiliaria-santos-wine.vercel.app/",
+    github: "https://github.com/eilincoln/imobiliaria",
+  },
 ];
