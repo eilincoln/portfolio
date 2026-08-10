@@ -34,15 +34,16 @@ export const projects = [
     link: "https://lincolnberto.com/meus-projetos/escuta-e-cuida/",
   },
   {
-    title: "A Nova Era",
+    title: "Morauto Soluções Automotivas",
     status: "stable",
     description:
-      "Landing page do livro 'A Nova Era'. Desenvolvido no curso da DevMedia.",
-    tags: ["#HTML", "#CSS"],
-    image: "./img/capas-de-projetos/preview-desktop.png",
-    link: "https://lincolnberto.com/meus-projetos/a-era-artificial/",
-    github: "https://github.com/eilincoln/a-era-artificial",
+      "Landing Page institucional premium desenvolvida para uma oficina de funilaria de alto padrão em Campinas-SP. Conta com arquitetura CSS modular, design estruturado em Dark Mode, efeitos de micro-interações nativas e total responsividade para dispositivos móveis.",
+    tags: ["#HTML5", "#CSS3", "#CSS-Grid", "#Flexbox", "#Git"],
+    image: "./img/capas-de-projetos/morauto.png",
+    link: "https://lincolnberto.com/meus-projetos/morauto/",
+    github: "https://github.com/eilincoln/morauto",
   },
+
   {
     title: "Imobiliária Santos",
     status: "stable",
