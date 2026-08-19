@@ -45,6 +45,17 @@ export const projects = [
   },
 
   {
+    title: "Pet Boutique - Estética Animal",
+    status: "stable",
+    description:
+      "Landing page institucional focada em conversão. Desenvolvida com arquitetura CSS Modular nativa, o projeto apresenta serviços especializados, galeria de marcas com filtros dinâmicos e integração total com a API do WhatsApp e Google Maps.",
+    tags: ["#HTML5", "#CSS3", "#CSSGrid", "#Flexbox", "#Modular"],
+    image: "./img/capas-de-projetos/pet-boutique.png",
+    link: "https://lincolnberto.com.br/meus-projetos/pet-boutique/",
+    github: "https://github.com/eilincoln/pet-boutique",
+  },
+
+  {
     title: "Imobiliária Santos",
     status: "stable",
     description:
