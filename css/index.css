@@ -196,6 +196,7 @@
 
 .project-tags {
   display: flex;
+  flex-wrap: wrap;
   gap: 10px;
 }
 
@@ -204,6 +205,7 @@
   font-size: 0.85rem;
   color: var(--text-muted);
   font-weight: bold;
+  word-break: break-word;
 }
 
 .project-actions {
