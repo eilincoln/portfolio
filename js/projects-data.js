@@ -73,4 +73,22 @@ export const projects = [
     link: "https://lincolnberto.com.br/meus-projetos/pet-boutique/",
     github: "https://github.com/eilincoln/pet-boutique",
   },
+  {
+    title: "Manhattan - Coffee House",
+    status: "stable",
+    description:
+      "Landing page institucional de alto padrão desenvolvida para uma cafeteria premium. O projeto aplica conceitos avançados de estruturação semântica, controle de imagens de fundo através de múltiplos blocos com efeito Parallax nativo e navegação interna otimizada com rolagem suave.",
+    tags: [
+      "#HTML5",
+      "#CSS3",
+      "#Flexbox",
+      "#DesignTokens",
+      "#Modular",
+      "#Parallax",
+      "#Cafeteria",
+    ],
+    image: "./img/capas-de-projetos/manhattan-coffee-house.png",
+    link: "https://lincolnberto.com.br/meus-projetos/manhattan-coffee-house",
+    github: "https://github.com/eilincoln/coffee-house",
+  },
 ];
