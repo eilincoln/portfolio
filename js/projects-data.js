@@ -111,4 +111,24 @@ export const projects = [
     link: "https://lincolnberto.com.br/meus-projetos/alfatech",
     github: "https://github.com/eilincoln/alfatech",
   },
+  {
+    title: "Pousada Secreta - Hotelaria & Reservas",
+    status: "stable",
+    description:
+      "Landing page institucional de alto padrão e catálogo de acomodações desenvolvidos com foco em experiência do usuário e semântica estrita. O projeto aplica arquitetura CSS modular nativa com Design Tokens (:root), navegação fixa com efeito Glassmorphism, layout fluido com CSS Grid auto-fit e otimizações de Core Web Vitals.",
+    tags: [
+      "#HTML5",
+      "#CSS3",
+      "#CSSGrid",
+      "#Flexbox",
+      "#DesignTokens",
+      "#A11y",
+      "#ModularCSS",
+      "#Glassmorphism",
+      "#Hotelaria",
+    ],
+    image: "./img/capas-de-projetos/pousada-secreta.png",
+    link: "https://lincolnberto.com.br/meus-projetos/pousada-secreta",
+    github: "https://github.com/eilincoln/pousada-secreta",
+  },
 ];
