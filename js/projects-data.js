@@ -91,4 +91,24 @@ export const projects = [
     link: "https://lincolnberto.com.br/meus-projetos/manhattan-coffee-house",
     github: "https://github.com/eilincoln/coffee-house",
   },
+
+  {
+    title: "AlfaTech - Soluções em Hospedagem",
+    status: "stable",
+    description:
+      "Landing page institucional e comercial desenvolvida com foco em conversão e semântica web. Conta com arquitetura CSS modular nativa, matriz comparativa de recursos técnicos com acessibilidade tabular rigorosa e layout responsivo estruturado via CSS Grid e Flexbox.",
+    tags: [
+      "#HTML5",
+      "#CSS3",
+      "#CSSGrid",
+      "#Flexbox",
+      "#A11y",
+      "#DesignTokens",
+      "#Modular",
+      "#Hospedagem",
+    ],
+    image: "./img/capas-de-projetos/alfatech.png",
+    link: "https://lincolnberto.com.br/meus-projetos/alfatech",
+    github: "https://github.com/eilincoln/alfatech",
+  },
 ];
