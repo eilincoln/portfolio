@@ -131,4 +131,26 @@ export const projects = [
     link: "https://lincolnberto.com.br/meus-projetos/pousada-secreta",
     github: "https://github.com/eilincoln/pousada-secreta",
   },
+
+  {
+    title: "Sistema ATS & Gestão de Vagas Corporativas",
+    status: "stable",
+    description:
+      "Plataforma completa de recrutamento e seleção (Applicant Tracking System) desenvolvida para centralizar a triagem de talentos corporativos. O projeto conta com portal público de vagas com filtros instantâneos, painel administrativo protegido com métricas em tempo real, pipeline de candidatos, exportação de relatórios em CSV e camada de segurança com PostgreSQL Row Level Security (RLS) e Signed URLs temporárias para visualização confidencial de currículos.",
+    tags: [
+      "#React",
+      "#TypeScript",
+      "#Vite",
+      "#Supabase",
+      "#PostgreSQL",
+      "#RLS",
+      "#CSSModules",
+      "#ReactRouter",
+      "#ATS",
+      "#SaaS",
+    ],
+    image: "./img/capas-de-projetos/sistema-ats-vagas.png",
+    link: "https://carrantos-vagas.vercel.app/",
+    github: "https://github.com/eilincoln/carrantos-vagas",
+  },
 ];
