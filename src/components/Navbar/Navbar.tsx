@@ -1,24 +1,25 @@
+import { Link } from "react-router-dom";
 import styles from "./Navbar.module.css";
 
 export function Navbar() {
   return (
     <header className={styles.header}>
       <nav className={styles.navContainer} aria-label="Navegação Principal">
-        <a href="#" className={styles.brand}>
+        <Link to="/" className={styles.brand}>
           <span className={styles.brandBadge}>LB</span>
           <span>
             lincolnberto<span style={{ color: "var(--accent-cta)" }}>.com</span>
           </span>
-        </a>
+        </Link>
 
         <ul className={styles.navLinks}>
           <li className={styles.linkProjects}>
-            <a href="#projetos" className={styles.navLink}>
+            <Link to="/projetos" className={styles.navLink}>
               Projetos
-            </a>
+            </Link>
           </li>
           <li className={styles.linkAbout}>
-            <a href="#sobre" className={styles.navLink}>
+            <a href="/#sobre" className={styles.navLink}>
               Sobre
             </a>
           </li>

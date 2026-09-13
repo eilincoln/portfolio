@@ -1,35 +1,29 @@
 import { useState, useMemo } from "react";
+import { Link } from "react-router-dom";
 import { projects, type Project } from "../../data/projects";
 import styles from "./Projects.module.css";
 
 export function Projects() {
   const [selectedTag, setSelectedTag] = useState<string>("TODOS");
-  const [showAll, setShowAll] = useState<boolean>(false);
 
   const availableTags = useMemo(() => {
     return ["TODOS", "#React", "#TypeScript", "#HTML5", "#CSS3", "#CSSGrid"];
   }, []);
 
-  // Inverte estritamente a ordem cronológica: o último do array fica em 1º lugar
+  // Inverte a ordem: projetos mais recentes primeiro
   const sortedProjects = useMemo(() => {
     return [...projects].reverse();
   }, []);
 
-  // Mostra apenas 6 na Home (ou todos ao clicar em ver mais)
+  // Filtra por tag e limita estritamente em 6 cards na Home
   const displayedProjects = useMemo(() => {
     const filtered =
       selectedTag === "TODOS"
         ? sortedProjects
         : sortedProjects.filter((p) => p.tags.includes(selectedTag));
 
-    if (showAll || selectedTag !== "TODOS") {
-      return filtered;
-    }
-
     return filtered.slice(0, 6);
-  }, [sortedProjects, selectedTag, showAll]);
-
-  const hasMoreProjects = selectedTag === "TODOS" && sortedProjects.length > 6;
+  }, [sortedProjects, selectedTag]);
 
   return (
     <section
@@ -47,7 +41,7 @@ export function Projects() {
         </p>
       </div>
 
-      {/* Barra de Filtros */}
+      {/* Barra de Filtros Rápidos */}
       <div
         className={styles.filterBar}
         role="toolbar"
@@ -58,10 +52,7 @@ export function Projects() {
             key={tag}
             type="button"
             className={`${styles.filterBtn} ${selectedTag === tag ? styles.filterBtnActive : ""}`}
-            onClick={() => {
-              setSelectedTag(tag);
-              setShowAll(false);
-            }}
+            onClick={() => setSelectedTag(tag)}
           >
             {tag}
           </button>
@@ -132,23 +123,15 @@ export function Projects() {
         ))}
       </div>
 
-      {/* Botão de Expansão */}
-      {hasMoreProjects && (
-        <div className={styles.viewMoreWrapper}>
-          <button
-            type="button"
-            className={styles.viewMoreBtn}
-            onClick={() => setShowAll(!showAll)}
-          >
-            <span>
-              {showAll
-                ? "// Recolher Catálogo"
-                : `// Ver Mais Projetos (${sortedProjects.length})`}
-            </span>
-            <span aria-hidden="true">{showAll ? "↑" : "↓"}</span>
-          </button>
-        </div>
-      )}
+      {/* Navegação para o Diretório Completo */}
+      <div className={styles.viewMoreWrapper}>
+        <Link to="/projetos" className={styles.viewMoreBtn}>
+          <span>
+            // Explorar Diretório Completo ({sortedProjects.length} Projetos)
+          </span>
+          <span aria-hidden="true">→</span>
+        </Link>
+      </div>
     </section>
   );
 }
