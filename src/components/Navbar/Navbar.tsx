@@ -1,7 +1,10 @@
 import { Link } from "react-router-dom";
+import { useTheme } from "../../hooks/useTheme";
 import styles from "./Navbar.module.css";
 
 export function Navbar() {
+  const { theme, toggleTheme } = useTheme();
+
   return (
     <header className={styles.header}>
       <nav className={styles.navContainer} aria-label="Navegação Principal">
@@ -33,6 +36,21 @@ export function Navbar() {
               <span>// Hub de Links</span>
               <span aria-hidden="true">&rarr;</span>
             </a>
+          </li>
+          <li>
+            <button
+              type="button"
+              onClick={toggleTheme}
+              className={styles.themeToggle}
+              aria-label={
+                theme === "dark" ? "Ativar modo claro" : "Ativar modo escuro"
+              }
+              title={
+                theme === "dark" ? "Ativar modo claro" : "Ativar modo escuro"
+              }
+            >
+              {theme === "dark" ? "☀️" : "🌙"}
+            </button>
           </li>
         </ul>
       </nav>

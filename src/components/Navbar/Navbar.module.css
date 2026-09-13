@@ -83,6 +83,28 @@
   box-shadow: 0 4px 15px rgba(255, 155, 21, 0.35);
 }
 
+/* Botão de Tema macOS */
+.themeToggle {
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--radius-md);
+  background: var(--glass-card-bg);
+  border: 1px solid var(--glass-border);
+  box-shadow: var(--glass-inner-bevel);
+  color: var(--text-primary);
+  font-size: 1rem;
+  transition: all var(--transition-fast);
+}
+
+.themeToggle:hover {
+  background: var(--glass-card-hover);
+  border-color: var(--glass-border-highlight);
+  transform: translateY(-1px);
+}
+
 @media (max-width: 640px) {
   .header {
     top: 0.5rem;
