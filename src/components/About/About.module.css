@@ -1,0 +1,116 @@
+.section {
+  padding: 3.5rem 0;
+  border-top: 1px solid var(--border-subtle);
+  width: 100%;
+}
+
+.header {
+  margin-bottom: 2rem;
+}
+
+.tag {
+  font-family: var(--font-mono);
+  font-size: 0.825rem;
+  color: var(--accent-status);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  display: inline-block;
+  margin-bottom: 0.5rem;
+}
+
+.title {
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 0.5rem;
+  letter-spacing: -0.02em;
+}
+
+.layout {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 2rem;
+  align-items: start;
+}
+
+/* Painel de Texto em Vidro macOS */
+.bioCard {
+  background: var(--glass-card-bg);
+  backdrop-filter: blur(16px) saturate(180%);
+  -webkit-backdrop-filter: blur(16px) saturate(180%);
+  border: 1px solid var(--glass-border);
+  box-shadow: var(--glass-shadow), var(--glass-inner-bevel);
+  border-radius: var(--radius-lg);
+  padding: 1.75rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  line-height: 1.7;
+  color: var(--text-muted);
+  font-size: 0.95rem;
+}
+
+.bioCard p strong {
+  color: var(--text-primary);
+  font-weight: 600;
+}
+
+.highlightText {
+  color: var(--accent-cta);
+  font-weight: 600;
+}
+
+/* Coluna Direita: Pilares e Princípios */
+.pillarsList {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.pillarCard {
+  background: var(--glass-card-bg);
+  backdrop-filter: blur(16px) saturate(180%);
+  -webkit-backdrop-filter: blur(16px) saturate(180%);
+  border: 1px solid var(--glass-border);
+  box-shadow: var(--glass-shadow), var(--glass-inner-bevel);
+  border-radius: var(--radius-md);
+  padding: 1.25rem;
+  transition:
+    transform var(--transition-fast),
+    border-color var(--transition-fast);
+}
+
+.pillarCard:hover {
+  transform: translateY(-2px);
+  border-color: var(--glass-border-highlight);
+}
+
+.pillarHeader {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin-bottom: 0.35rem;
+}
+
+.pillarIcon {
+  font-size: 1.15rem;
+}
+
+.pillarTitle {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.pillarDesc {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  line-height: 1.5;
+}
+
+@media (max-width: 840px) {
+  .layout {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+}
