@@ -184,8 +184,8 @@
 @media (max-width: 820px) {
   .hero {
     flex-direction: column-reverse;
-    align-items: center; /* Centraliza os blocos horizontalmente */
-    text-align: center; /* Centraliza a tipografia */
+    align-items: center;
+    text-align: center;
     padding: 2.5rem 0 2rem 0;
     gap: 2rem;
   }
@@ -193,7 +193,7 @@
   .heroContent {
     display: flex;
     flex-direction: column;
-    align-items: center; /* Centraliza a badge e os botões */
+    align-items: center;
     max-width: 100%;
   }
 
@@ -209,6 +209,6 @@
   }
 
   .actions {
-    justify-content: center; /* Centraliza os dois botões no mobile */
+    justify-content: center;
   }
 }

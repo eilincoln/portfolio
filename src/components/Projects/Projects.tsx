@@ -4,25 +4,32 @@ import styles from "./Projects.module.css";
 
 export function Projects() {
   const [selectedTag, setSelectedTag] = useState<string>("TODOS");
+  const [showAll, setShowAll] = useState<boolean>(false);
 
-  // Coleta as tags mais relevantes para os filtros rápidos
   const availableTags = useMemo(() => {
-    const coreTags = [
-      "TODOS",
-      "#React",
-      "#TypeScript",
-      "#HTML5",
-      "#CSS3",
-      "#CSSGrid",
-    ];
-    return coreTags;
+    return ["TODOS", "#React", "#TypeScript", "#HTML5", "#CSS3", "#CSSGrid"];
   }, []);
 
-  // Filtra projetos dinamicamente
-  const filteredProjects = useMemo(() => {
-    if (selectedTag === "TODOS") return projects;
-    return projects.filter((p) => p.tags.includes(selectedTag));
-  }, [selectedTag]);
+  // Inverte estritamente a ordem cronológica: o último do array fica em 1º lugar
+  const sortedProjects = useMemo(() => {
+    return [...projects].reverse();
+  }, []);
+
+  // Mostra apenas 6 na Home (ou todos ao clicar em ver mais)
+  const displayedProjects = useMemo(() => {
+    const filtered =
+      selectedTag === "TODOS"
+        ? sortedProjects
+        : sortedProjects.filter((p) => p.tags.includes(selectedTag));
+
+    if (showAll || selectedTag !== "TODOS") {
+      return filtered;
+    }
+
+    return filtered.slice(0, 6);
+  }, [sortedProjects, selectedTag, showAll]);
+
+  const hasMoreProjects = selectedTag === "TODOS" && sortedProjects.length > 6;
 
   return (
     <section
@@ -40,7 +47,7 @@ export function Projects() {
         </p>
       </div>
 
-      {/* Filtros por Stack */}
+      {/* Barra de Filtros */}
       <div
         className={styles.filterBar}
         role="toolbar"
@@ -51,7 +58,10 @@ export function Projects() {
             key={tag}
             type="button"
             className={`${styles.filterBtn} ${selectedTag === tag ? styles.filterBtnActive : ""}`}
-            onClick={() => setSelectedTag(tag)}
+            onClick={() => {
+              setSelectedTag(tag);
+              setShowAll(false);
+            }}
           >
             {tag}
           </button>
@@ -60,7 +70,7 @@ export function Projects() {
 
       {/* Grid de Cards */}
       <div className={styles.grid}>
-        {filteredProjects.map((project: Project) => (
+        {displayedProjects.map((project: Project) => (
           <article key={project.title} className={styles.card}>
             {project.image && (
               <div className={styles.imageWrapper}>
@@ -70,7 +80,6 @@ export function Projects() {
                   className={styles.image}
                   loading="lazy"
                   onError={(e) => {
-                    // Oculta a área da imagem caso falhe o carregamento
                     e.currentTarget.style.display = "none";
                   }}
                 />
@@ -101,7 +110,7 @@ export function Projects() {
                       className={styles.actionLink}
                     >
                       <span>Acessar Projeto</span>
-                      <span aria-hidden="true">&rarr;</span>
+                      <span aria-hidden="true">→</span>
                     </a>
                   )}
 
@@ -113,7 +122,7 @@ export function Projects() {
                       className={styles.githubLink}
                     >
                       <span>GitHub</span>
-                      <span aria-hidden="true">&nearr;</span>
+                      <span aria-hidden="true">↗</span>
                     </a>
                   )}
                 </div>
@@ -122,6 +131,24 @@ export function Projects() {
           </article>
         ))}
       </div>
+
+      {/* Botão de Expansão */}
+      {hasMoreProjects && (
+        <div className={styles.viewMoreWrapper}>
+          <button
+            type="button"
+            className={styles.viewMoreBtn}
+            onClick={() => setShowAll(!showAll)}
+          >
+            <span>
+              {showAll
+                ? "// Recolher Catálogo"
+                : `// Ver Mais Projetos (${sortedProjects.length})`}
+            </span>
+            <span aria-hidden="true">{showAll ? "↑" : "↓"}</span>
+          </button>
+        </div>
+      )}
     </section>
   );
 }
