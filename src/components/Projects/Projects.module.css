@@ -225,8 +225,9 @@
 }
 
 .viewMoreBtn:hover {
-  background: var(--glass-card-hover);
+  background: var(--accent-cta);
+  color: #0d1117;
   border-color: var(--accent-cta);
-  color: #fff;
+  box-shadow: 0 6px 20px rgba(255, 155, 21, 0.35);
   transform: translateY(-2px);
 }
