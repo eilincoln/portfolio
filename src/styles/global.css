@@ -1,0 +1,35 @@
+:root {
+  --bg-main: #161b22;
+  --bg-card: #21262d;
+  --bg-surface: #434243;
+  --text-primary: #f1f5fa;
+  --text-muted: #a6a6a6;
+  --accent-cta: #ff9b15;
+  --accent-cta-hover: #e0850c;
+  --accent-status: #9bcc8f;
+  --border-subtle: #30363d;
+
+  --font-body: "Inter", system-ui, -apple-system, sans-serif;
+  --font-mono: "IBM Plex Mono", monospace;
+
+  --radius-sm: 6px;
+  --radius-md: 12px;
+  --transition-fast: 0.2s ease-in-out;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  min-height: 100vh;
+  background-color: var(--bg-main);
+  color: var(--text-primary);
+  font-family: var(--font-body);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
