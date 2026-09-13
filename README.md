@@ -1,85 +1,75 @@
-# 💻 Lincoln Berto | Portfólio & Hub Freelancer
+# React + TypeScript + Vite
 
-Portfólio pessoal e plataforma de serviços digitais desenvolvido para apresentar meus projetos, habilidades técnicas e evolução como Desenvolvedor Front-end.
+This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-O projeto foi totalmente reestruturado para operar em um modelo multipáginas escalável, utilizando uma arquitetura modular de folhas de estilo e mantendo uma identidade visual lógica e limpa inspirada no universo geek.
+Currently, two official plugins are available:
 
-🌐 **Acesse o sistema online:** https://lincolnberto.com
+- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
+- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
 
----
+## React Compiler
 
-## 📸 Preview
+The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
 
-<p align="center">
-  <img src="./img/projeto-pic.png" alt="Preview do Portfólio de Lincoln Berto" width="900">
-</p>
+## Expanding the ESLint configuration
 
----
+If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
 
-## 🚀 Tecnologias e Metodologias
+```js
+export default defineConfig([
+  globalIgnores(['dist']),
+  {
+    files: ['**/*.{ts,tsx}'],
+    extends: [
+      // Other configs...
 
-- **HTML5:** Estrutura semântica avançada, otimizações de acessibilidade e tags de SEO.
-- **CSS3 Avançado:** Utilização de variáveis nativas (`:root`), Flexbox e layouts matemáticos com CSS Grid.
-- **Arquitetura CSS Modular:** Centralização de dependências através de um Hub central (`main.css`) via diretiva `@import`.
-- **Git & GitHub:** Versionamento profissional e histórico estruturado de commits.
-- **JavaScript (Em Evolução):** Fundamentos lógicos preparados para futuras automações de interface.
+      // Remove tseslint.configs.recommended and replace with this
+      tseslint.configs.recommendedTypeChecked,
+      // Alternatively, use this for stricter rules
+      tseslint.configs.strictTypeChecked,
+      // Optionally, add this for stylistic rules
+      tseslint.configs.stylisticTypeChecked,
 
----
+      // Other configs...
+    ],
+    languageOptions: {
+      parserOptions: {
+        project: ['./tsconfig.node.json', './tsconfig.app.json'],
+        tsconfigRootDir: import.meta.dirname,
+      },
+      // other options...
+    },
+  },
+])
 
-## ✨ Funcionalidades do Ecossistema
-
-- **Arquitetura Multipáginas:** Separação física de responsabilidades entre Home, Sobre e Serviços.
-- **Layout Totalmente Responsivo:** Adaptação geométrica precisa para dispositivos mobile, tablets e desktops.
-- **Protocolos de Estado Ativo:** Indicação visual de navegação no menu através de classes utilitárias.
-- **Canal de Conversão Direta:** Integração automatizada com mensagens estruturadas para contato via WhatsApp.
-- **Estrutura Pronta para Expansão:** Diretório modular projetado para receber novas aplicações sem quebra de código.
-
----
-
-## 📂 Estrutura Modular do Projeto
-
-```text
-portfolio/
-├── index.html        # Página Inicial (Hero, Stack, Resumo, Projetos, Contato)
-├── sobre.html        # Página Expandida (Trajetória Técnica e Soft Skills)
-├── servicos.html     # Página Comercial (Protocolos de Freela e Algoritmo de Trabalho)
-├── projetos.html     # Diretório Completo (Logs de Códigos e Projetos)
-├── README.md         # Documentação do Sistema
-├── .gitignore        # Bloqueio de Metadados (Ex: .DS_Store do macOS)
-├── img/
-│   ├── avatar.png    # Identidade Visual / Render 3D Local
-│   └── projeto-pic.png
-└── css/
-    ├── main.css      # Arquivo Mestre (Hub de Importação Centralizada)
-    ├── global.css    # Variáveis, Resets, Configurações de Header, Footer e Botões
-    ├── index.css     # Estilos Exclusivos dos Blocos da Home
-    ├── sobre.css     # Estilos de Listas e Componentes do Sobre Mim
-    ├── servicos.css  # Layout dos Cards de Serviços e Fluxo de Trabalho
-    └── projetos.css  # Ajustes de Margem e Introdução do Diretório
 ```
 
----
+You can also install [eslint-plugin-react-x](https://npmx.dev/package/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://npmx.dev/package/eslint-plugin-react-dom) for React-specific lint rules:
 
-## 📌 Diretório de Projetos e Status
+```js
+// eslint.config.js
+import reactX from 'eslint-plugin-react-x'
+import reactDom from 'eslint-plugin-react-dom'
 
-O ecossistema monitora a evolução contínua dos seguintes módulos:
+export default defineConfig([
+  globalIgnores(['dist']),
+  {
+    files: ['**/*.{ts,tsx}'],
+    extends: [
+      // Other configs...
+      // Enable lint rules for React
+      reactX.configs['recommended-typescript'],
+      // Enable lint rules for React DOM
+      reactDom.configs.recommended,
+    ],
+    languageOptions: {
+      parserOptions: {
+        project: ['./tsconfig.node.json', './tsconfig.app.json'],
+        tsconfigRootDir: import.meta.dirname,
+      },
+      // other options...
+    },
+  },
+])
 
-- [x] **Módulo 00 - Portfólio Multipáginas:** Estruturado, componentizado e publicado em produção.
-- [x] **Módulo 01 - A Era Artificial:** Landing page estrutural em desenvolvimento (`Building`).
-- [ ] **Módulo 02 - Project_02.log:** Bloco futuro reservado para lógica de programação pura (`Null`).
-- [ ] **Módulo 03 - Project_03.log:** Bloco futuro programado para componentização avançada (`Null`).
-
----
-
-## 🎯 Objetivo Profissional
-
-Este projeto consolidou a minha transição da infraestrutura e suporte de TI para a engenharia de software front-end. Ele opera como o quartel-general da minha atuação como especialista digital e desenvolvedor freelancer, demonstrando na prática o uso de código limpo, semântica e organização rigorosa.
-
----
-
-## 📬 Protocolos de Conexão
-
-- 🌐 **Web:** https://lincolnberto.com
-- 💼 **LinkedIn:** [lincoln-berto](https://linkedin.com/in/lincoln-berto)
-- 💻 **GitHub:** [eilincoln](https://github.com/eilincoln)
-- ✉️ **E-mail:** contato@lincolnberto.com
+```
