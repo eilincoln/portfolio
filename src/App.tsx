@@ -1,5 +1,6 @@
 import { Navbar } from "./components/Navbar/Navbar";
 import { Hero } from "./components/Hero/Hero";
+import { Skills } from "./components/Skills/Skills";
 import { projects } from "./data/projects";
 
 export function App() {
@@ -19,11 +20,12 @@ export function App() {
         }}
       >
         <Hero />
+        <Skills />
 
         <section
           id="projetos"
           style={{
-            padding: "3rem 0",
+            padding: "3.5rem 0",
             borderTop: "1px solid var(--border-subtle)",
           }}
         >
