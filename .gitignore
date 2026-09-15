@@ -1,3 +1,14 @@
+# Dependências
+node_modules/
+.pnp
+.pnp.js
+
+# Build e Produção
+dist/
+dist-ssr/
+build/
+*.local
+
 # Logs
 logs
 *.log
@@ -7,18 +18,29 @@ yarn-error.log*
 pnpm-debug.log*
 lerna-debug.log*
 
-node_modules
-dist
-dist-ssr
-*.local
-
-# Editor directories and files
-.vscode/*
-!.vscode/extensions.json
-.idea
+# Arquivos do Sistema Operacional (macOS)
 .DS_Store
+.AppleDouble
+.LSOverride
+Icon
+._*
+
+# Configurações de Editores
+.vscode/
+!.vscode/extensions.json
+.idea/
 *.suo
 *.ntvs*
 *.njsproj
 *.sln
 *.sw?
+
+# Variáveis de Ambiente
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Vercel
+.vercel

@@ -5,14 +5,16 @@
   width: calc(100% - 2rem);
   max-width: 1040px;
   margin: 0 auto;
-
-  /* Vidro macOS Estilo Island/Pill */
-  background: var(--glass-bg);
-  backdrop-filter: blur(20px) saturate(180%);
-  -webkit-backdrop-filter: blur(20px) saturate(180%);
-  border: 1px solid var(--glass-border);
+  background: #161b22;
+  border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: var(--radius-lg);
-  box-shadow: var(--glass-shadow), var(--glass-inner-bevel);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.35);
+}
+
+:root[data-theme="light"] .header {
+  background: #ffffff;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
 }
 
 .navContainer {
