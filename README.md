@@ -1,75 +1,63 @@
-# React + TypeScript + Vite
+# ⚡ PORTFOLIO V2 — LINCOLN BERTO
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+> [!NOTE]
+> **Engenharia de Interface & Marca Pessoal:** Aplicação Single Page Application (SPA) de alta performance desenvolvida para apresentar minha trajetória, projetos em produção, artigos técnicos e competências em desenvolvimento front-end. O projeto foi construído com arquitetura modular, tipagem estrita de contratos de dados, alternância de temas em tempo real via Design Tokens e deploy contínuo em borda (Edge CDN).
 
-Currently, two official plugins are available:
+Plataforma desenhada para proporcionar uma navegação fluida, acessível e responsiva em qualquer dispositivo, servindo como hub central para recrutadores, clientes e a comunidade técnica acompanharem minhas entregas de software.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+---
 
-## React Compiler
+## 🌐 Demonstração & Ambientes
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- **Domínio Principal:** [https://www.lincolnberto.com.br](https://www.lincolnberto.com.br)
+- **Domínio Global (Redirect):** [https://www.lincolnberto.com](https://www.lincolnberto.com)
+- **Hub de Links:** [https://links.lincolnberto.com](https://links.lincolnberto.com)
 
-## Expanding the ESLint configuration
+<div align="center">
+  <table>
+    <tr>
+      <td align="center" width="60%">
+        <b>💻 Experiência Desktop (Dark / Light)</b><br><br>
+        <img src="./src/assets/preview-desktop.png" alt="Demonstração Desktop do Portfólio" width="100%">
+      </td>
+      <td align="center" width="40%">
+        <b>📱 Navegação & Mobile First</b><br><br>
+        <img src="./src/assets/preview-mobile.png" alt="Demonstração Mobile do Portfólio" width="100%">
+      </td>
+    </tr>
+  </table>
+</div>
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+---
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+## 🚀 Stack Tecnológica e Decisões de Arquitetura
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+O projeto foi construído priorizando métricas de Web Vitals, semântica estrita e desacoplamento de responsabilidades:
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+- **React 18 & TypeScript:** Componentização declarativa, tipagem estática e desacoplamento de regras de negócio em custom hooks.
+- **Vite & Pipeline de Produção:** Ferramenta de build ultrarrápida com compilação otimizada, code-splitting nativo e minificação de assets.
+- **CSS Modules & Design Tokens:** Estilos com escopo local protegido contra vazamento de especificidade, consumindo variáveis padronizadas no `:root` para espaçamentos, tipografia fluida e cores semânticas.
+- **Theming System Nativo:** Mecanismo de alternância instantânea entre Dark Mode e Light Mode com persistência de preferência via `localStorage` e sincronização com as preferências do sistema operacional (`prefers-color-scheme`).
+- **SPA Deep Linking & Fallback de Rotas:** Configuração de roteamento cliente via `vercel.json` com regras de reescrita global para evitar erros de 404 em acessos diretos.
+- **Infraestrutura em Borda (Vercel CDN):** Hospedagem estática com distribuição global, provisionamento automático de certificados SSL e integração contínua (CI/CD) acionada a cada `git push` na branch `main`.
 
-```
+---
 
-You can also install [eslint-plugin-react-x](https://npmx.dev/package/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://npmx.dev/package/eslint-plugin-react-dom) for React-specific lint rules:
+## 📝 Funcionalidades em Destaque
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+### 🎨 Design System & Interface
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+- **Header Flutuante Responsivo:** Barra de navegação com acabamento de alto contraste, suporte a ancoragem suave e alternador de tema acessível.
+- **Showcase de Projetos:** Catálogo categorizado de aplicações em produção com links diretos para repositórios no GitHub e ambientes de demonstração ativa.
+- **Grade de Competências Técnicas:** Visualização estruturada de ecossistemas (Front-end Core, Arquitetura CSS, TypeScript e Ferramental de Build).
+- **Acessibilidade (A11y):** Marcação com tags semânticas estritas (`<header>`, `<main>`, `<section>`, `<article>`, `<footer>`), foco navegável por teclado e contraste validado para leitura prolongada.
 
-```
+---
+
+## 👨‍💻 Autor
+
+Desenvolvido por **Lincoln Berto**.
+
+- **LinkedIn:** [https://www.linkedin.com/in/lincoln-berto/](https://www.linkedin.com/in/lincoln-berto/)
+- **GitHub:** [https://github.com/eilincoln](https://github.com/eilincoln)
+- **Portfólio:** [https://www.lincolnberto.com.br](https://www.lincolnberto.com.br)
