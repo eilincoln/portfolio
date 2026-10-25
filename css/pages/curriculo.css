@@ -95,6 +95,13 @@ ul {
   font-weight: 600;
 }
 
+/* Stack na mesma linha do cargo: aparece logo de cara e o ATS lê como texto */
+.cv__stack {
+  color: var(--cv-text);
+  font-size: 10pt;
+  font-weight: 400;
+}
+
 .cv__contact {
   margin-top: 5pt;
   color: var(--cv-muted);
