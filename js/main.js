@@ -10,6 +10,7 @@ import { initWhatsapp } from "./modules/whatsapp.js";
 import { initBuilder } from "./modules/builder.js";
 import { initTimeline } from "./modules/timeline.js";
 import { initReveal } from "./modules/reveal.js";
+import { initWhatsappFloat } from "./modules/whatsapp-float.js";
 
 initTheme();
 initMenu();
@@ -17,6 +18,7 @@ initWhatsapp();
 initBuilder();
 initTimeline();
 initReveal();
+initWhatsappFloat();
 
 document.querySelectorAll("[data-year]").forEach((el) => {
   el.textContent = new Date().getFullYear();

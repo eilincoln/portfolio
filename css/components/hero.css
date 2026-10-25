@@ -21,6 +21,16 @@
   margin-top: var(--space-3);
 }
 
+/* "Oi, eu sou o Lincoln." em cima, menor: o destaque fica no que ele faz */
+.hero__hello {
+  display: block;
+  margin-bottom: 0.35em;
+  color: var(--color-text-muted);
+  font-size: var(--fs-h3);
+  font-weight: var(--fw-medium);
+  letter-spacing: normal;
+}
+
 .hero__text {
   margin-top: var(--space-3);
 }

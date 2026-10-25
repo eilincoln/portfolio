@@ -51,6 +51,7 @@
       <symbol id="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></symbol>
       <symbol id="i-moon" viewBox="0 0 24 24"><path d="M20.5 14.5A8.5 8.5 0 1 1 9.5 3.5a7 7 0 0 0 11 11z"/></symbol>
       <symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"/></symbol>
+      <symbol id="i-download" viewBox="0 0 24 24"><path d="M12 4v11M7 10l5 5 5-5M5 20h14"/></symbol>
       <symbol id="i-close" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></symbol>
     </svg>
 
@@ -100,11 +101,12 @@
               Disponível para vagas CLT e projetos freelance
             </p>
             <h1 class="hero__title">
-              Oi, eu sou o Lincoln. Desenvolvedor front-end que <span class="hl">coloca sistemas no ar.</span>
+              <span class="hero__hello">Oi, eu sou o Lincoln.</span>
+              Desenvolvedor front-end que <span class="hl">coloca sistemas no ar.</span>
             </h1>
             <p class="lead hero__text">
-              Desenvolvedor front-end em Itatiba/SP. Trabalho com TI desde 2023 e
-              hoje programo de ponta a ponta: do portal de vagas que um RH usa
+              Moro em Itatiba/SP e trabalho com TI desde 2023. Hoje programo
+              de ponta a ponta: do portal de vagas que um RH usa
               todo dia ao site institucional de um cliente, com nota fiscal.
             </p>
             <div class="btn-group">
@@ -327,7 +329,11 @@
                 <li><svg class="icon" aria-hidden="true"><use href="#i-check"></use></svg>Git, deploy na Vercel e na Hostinger, DNS e domínio</li>
               </ul>
               <div class="btn-group">
-                <a class="btn btn--primary" href="https://www.linkedin.com/in/lincoln-berto/" target="_blank" rel="noopener">
+                <a class="btn btn--primary" href="/curriculo/lincoln-berto-curriculo.pdf" download>
+                  <svg class="icon" aria-hidden="true"><use href="#i-download"></use></svg>
+                  Baixar currículo
+                </a>
+                <a class="btn btn--ghost" href="https://www.linkedin.com/in/lincoln-berto/" target="_blank" rel="noopener">
                   <svg class="icon" aria-hidden="true"><use href="#i-linkedin"></use></svg>
                   LinkedIn
                 </a>
@@ -553,6 +559,7 @@
               <li><a href="/contato/" data-whatsapp><svg class="icon" aria-hidden="true"><use href="#i-whatsapp"></use></svg>WhatsApp</a></li>
               <li><a href="https://www.linkedin.com/in/lincoln-berto/" target="_blank" rel="noopener"><svg class="icon" aria-hidden="true"><use href="#i-linkedin"></use></svg>LinkedIn</a></li>
               <li><a href="https://github.com/eilincoln" target="_blank" rel="noopener"><svg class="icon" aria-hidden="true"><use href="#i-github"></use></svg>GitHub</a></li>
+              <li><a href="/curriculo/"><svg class="icon" aria-hidden="true"><use href="#i-download"></use></svg>Currículo</a></li>
             </ul>
           </div>
 
@@ -573,5 +580,11 @@
         </div>
       </div>
     </footer>
+
+    <!-- WhatsApp flutuante: aparece depois do hero e some perto do rodapé (js/modules/whatsapp-float.js) -->
+    <a class="wa-float is-hidden" href="/contato/" data-whatsapp="Olá, Lincoln! Vim pelo seu site." data-wa-float aria-label="Conversar com o Lincoln no WhatsApp">
+      <svg class="icon" aria-hidden="true"><use href="#i-whatsapp"></use></svg>
+      <span class="wa-float__label">Fale comigo</span>
+    </a>
   </body>
 </html>
