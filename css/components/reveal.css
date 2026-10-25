@@ -1,0 +1,17 @@
+/* ==========================================================================
+   REVELAR AO ROLAR — usado pelo js/modules/reveal.js
+   A classe .reveal só é colocada pelo JS. Sem JS, nada fica escondido.
+   ========================================================================== */
+
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition:
+    opacity 700ms var(--ease-out) var(--reveal-delay, 0ms),
+    transform 700ms var(--ease-out) var(--reveal-delay, 0ms);
+}
+
+.reveal.is-visible {
+  opacity: 1;
+  transform: none;
+}

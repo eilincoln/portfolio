@@ -1,0 +1,494 @@
+/* ==========================================================================
+   HERO DA HOME + ANIMAÇÃO "DO CÓDIGO AO SITE"
+   O editor (sempre escuro) digita o código e a prévia (sempre clara,
+   como o site de um cliente) vai se montando ao lado.
+   Sem JS ou com "reduzir movimento": tudo aparece pronto.
+   ========================================================================== */
+
+.hero {
+  position: relative;
+  padding-block: var(--space-8) var(--space-4);
+  background: var(--light-top);
+}
+
+.hero__grid {
+  display: grid;
+  gap: var(--space-8);
+  align-items: center;
+}
+
+.hero__title {
+  margin-top: var(--space-3);
+}
+
+.hero__text {
+  margin-top: var(--space-3);
+}
+
+.hero .btn-group {
+  margin-top: var(--space-5);
+}
+
+.hero__proof {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem 1.25rem;
+  margin-top: var(--space-5);
+  padding: 0;
+  list-style: none;
+  font-family: var(--font-mono);
+  font-size: var(--fs-xs);
+  color: var(--color-text-muted);
+}
+
+.hero__proof li {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+}
+
+.hero__proof li::before {
+  content: "";
+  width: 0.4rem;
+  height: 0.4rem;
+  border-radius: 50%;
+  background: var(--color-accent);
+}
+
+.hero__proof a {
+  text-decoration: none;
+}
+
+.hero__proof a:hover {
+  color: var(--color-heading);
+}
+
+@media (min-width: 64em) {
+  .hero {
+    padding-top: var(--space-10);
+  }
+
+  .hero__grid {
+    grid-template-columns: 1.05fr 1fr;
+    gap: var(--space-6);
+  }
+}
+
+/* ---------- Janelas (editor e navegador) ---------- */
+.window {
+  overflow: hidden;
+  border-radius: var(--radius-md);
+  border: 1px solid rgb(255 255 255 / 0.08);
+  box-shadow: var(--edge-light), var(--shadow-lg);
+}
+
+.window__bar {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.65rem 0.9rem;
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+}
+
+.window__dots {
+  display: flex;
+  gap: 0.35rem;
+}
+
+.window__dots span {
+  width: 0.6rem;
+  height: 0.6rem;
+  border-radius: 50%;
+  background: currentColor;
+  opacity: 0.35;
+}
+
+/* ---------- Composição: editor atrás, navegador na frente ---------- */
+.builder {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+}
+
+/* No desktop as janelas ficam levemente inclinadas, com o navegador
+   "saindo" da tela na frente do editor. Endireitam ao passar o mouse. */
+@media (min-width: 64em) {
+  .builder {
+    transform: perspective(1600px) rotateY(-9deg) rotateX(4deg);
+    transform-style: preserve-3d;
+    transition: transform 900ms var(--ease-out);
+  }
+
+  .builder__preview {
+    transform: translateZ(70px);
+  }
+
+  .builder:hover {
+    transform: perspective(1600px) rotateY(-3deg) rotateX(1deg);
+  }
+}
+
+.builder__editor {
+  grid-column: 1 / -1;
+  grid-row: 1;
+  background: #18181b;
+  color: #dfdfe2;
+}
+
+.builder__preview {
+  grid-column: 3 / -1;
+  grid-row: 2;
+  margin-top: -2.5rem;
+  z-index: 1;
+  background: #ffffff;
+  color: #1c1917;
+  border-color: rgb(0 0 0 / 0.08);
+}
+
+@media (min-width: 40em) {
+  .builder__editor {
+    grid-column: 1 / 11;
+  }
+
+  .builder__preview {
+    grid-column: 4 / -1;
+    margin-top: -6rem;
+  }
+}
+
+/* ---------- Editor de código ---------- */
+.builder__editor .window__bar {
+  border-bottom: 1px solid rgb(255 255 255 / 0.06);
+  color: #a1a1aa;
+}
+
+.builder__tab {
+  padding: 0.15rem 0.6rem;
+  border-radius: 4px;
+  background: rgb(255 255 255 / 0.06);
+  color: #fafafa;
+}
+
+.code {
+  margin: 0;
+  padding: 1rem 1rem 1.25rem 0;
+  font-family: var(--font-mono);
+  font-size: clamp(0.7rem, 0.62rem + 0.3vw, 0.8125rem);
+  line-height: 1.75;
+  counter-reset: line;
+  overflow: hidden;
+}
+
+.code__line {
+  display: block;
+  white-space: pre;
+  counter-increment: line;
+}
+
+/* Números das linhas */
+.code__line::before {
+  content: counter(line);
+  display: inline-block;
+  width: 2.75rem;
+  padding-right: 1rem;
+  text-align: right;
+  color: #52525b;
+}
+
+/* Cores da sintaxe: as do tema Origamid */
+.t-tag  { color: #c3b0ff; }
+.t-attr { color: #f0e86c; }
+.t-str  { color: #a6e65a; }
+.t-com  { color: #99999c; font-style: italic; }
+
+/* O texto da linha fica num <span> que "cresce" letra por letra */
+.code__text {
+  display: inline-block;
+  vertical-align: top;
+  overflow: hidden;
+}
+
+.builder.is-animating .code__text {
+  width: 0;
+}
+
+.builder.is-animating .code__line.is-typing .code__text {
+  animation: type calc(var(--chars) * 32ms) steps(var(--chars)) forwards;
+  box-shadow: inset -2px 0 0 #a674f5; /* cursor */
+}
+
+.builder.is-animating .code__line.is-done .code__text {
+  width: calc(var(--chars) * 1ch);
+}
+
+@keyframes type {
+  to {
+    width: calc(var(--chars) * 1ch);
+  }
+}
+
+/* ---------- Navegador com o "site do cliente" ---------- */
+.builder__preview .window__bar {
+  background: #f4f1ec;
+  color: #78716c;
+}
+
+.builder__url {
+  flex: 1;
+  padding: 0.2rem 0.7rem;
+  border-radius: var(--radius-full);
+  background: #ffffff;
+  color: #57534e;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.mock {
+  position: relative;
+  display: grid;
+  gap: 0.9rem;
+  padding: 1rem 1.1rem 3rem; /* espaço embaixo para o selo "no ar" */
+  font-family: var(--font-body);
+  min-height: 15rem;
+}
+
+.mock__nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 0.75rem;
+  font-weight: var(--fw-semibold);
+}
+
+.mock__nav span:last-child {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.mock__nav i {
+  display: block;
+  width: 1.6rem;
+  height: 0.35rem;
+  border-radius: 4px;
+  background: #e7e1d8;
+}
+
+.mock__hero {
+  display: grid;
+  gap: 0.6rem;
+  justify-items: start;
+  padding: 1rem;
+  border-radius: 8px;
+  background: linear-gradient(135deg, #3b2314, #6b3b1f);
+  color: #fff7ed;
+}
+
+.mock__title {
+  font-family: var(--font-heading);
+  font-size: clamp(1rem, 0.85rem + 0.6vw, 1.35rem);
+  font-weight: var(--fw-bold);
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+}
+
+.mock__btn {
+  padding: 0.35rem 0.8rem;
+  border-radius: var(--radius-full);
+  background: #22c55e;
+  color: #052e16;
+  font-size: 0.7rem;
+  font-weight: var(--fw-semibold);
+}
+
+.mock__cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.5rem;
+  list-style: none;
+  padding: 0;
+}
+
+.mock__cards li {
+  padding: 0.6rem 0.5rem;
+  border-radius: 6px;
+  background: #f4f1ec;
+  font-size: 0.7rem;
+  font-weight: var(--fw-semibold);
+  text-align: center;
+}
+
+.mock__cards li::before {
+  content: "";
+  display: block;
+  height: 1.6rem;
+  margin-bottom: 0.4rem;
+  border-radius: 4px;
+  background: #e7e1d8;
+}
+
+.mock__badge {
+  position: absolute;
+  right: 0.9rem;
+  bottom: 0.9rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.3rem 0.7rem;
+  border-radius: var(--radius-full);
+  background: #111114;
+  color: #fafafa;
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  box-shadow: 0 6px 18px rgb(0 0 0 / 0.25);
+}
+
+.mock__badge::before {
+  content: "";
+  width: 0.45rem;
+  height: 0.45rem;
+  border-radius: 50%;
+  background: #84cc16;
+}
+
+/* Partes da prévia escondidas até a linha de código correspondente terminar */
+.builder.is-animating [data-part] {
+  opacity: 0;
+  transform: translateY(10px) scale(0.97);
+  transition: opacity 450ms var(--ease-out), transform 450ms var(--ease-out);
+}
+
+.builder.is-animating [data-part].is-shown {
+  opacity: 1;
+  transform: none;
+}
+
+/* Recomeço do ciclo: tudo some junto */
+.builder.is-resetting .code__line,
+.builder.is-resetting [data-part] {
+  opacity: 0;
+  transition: opacity 400ms ease;
+}
+
+/* ---------- Depois de pronto: cursor pisca, alguém clica, chega pedido ---------- */
+.builder {
+  position: relative;
+}
+
+/* Cursor piscando na última linha enquanto o site está pronto */
+.builder.is-animating .code__line.is-idle .code__text {
+  animation: caret 1s steps(1) infinite;
+}
+
+@keyframes caret {
+  50% {
+    box-shadow: inset -2px 0 0 #a674f5;
+  }
+}
+
+/* Setinha do mouse: entra pelo canto e vai até o botão (posição vem do JS) */
+.mock__pointer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  fill: #111114;
+  stroke: #ffffff;
+  stroke-width: 1.5;
+  stroke-linejoin: round;
+  filter: drop-shadow(0 2px 3px rgb(0 0 0 / 0.3));
+  opacity: 0;
+  transform: translate(var(--x, 0), var(--y, 0));
+  transition: transform 1100ms var(--ease-out), opacity 300ms ease;
+  pointer-events: none;
+}
+
+.mock__pointer.is-visible {
+  opacity: 1;
+}
+
+/* Mais específico que o [data-part].is-shown, senão o clique não aparece */
+.builder.is-animating .mock__btn.is-clicked {
+  transition: transform 150ms ease, box-shadow 400ms ease;
+  transform: scale(0.92);
+  box-shadow: 0 0 0 6px rgb(34 197 94 / 0.3);
+}
+
+/* Notificação de pedido chegando */
+.builder__toast {
+  position: absolute;
+  right: 0;
+  top: 30%;
+  z-index: 2;
+  display: none;
+  align-items: center;
+  gap: 0.7rem;
+  max-width: 17rem;
+  padding: 0.7rem 0.9rem;
+  border-radius: var(--radius-md);
+  border: 1px solid rgb(255 255 255 / 0.08);
+  background: #1f1f23;
+  color: #dfdfe2;
+  font-size: 0.75rem;
+  line-height: 1.4;
+  box-shadow: var(--edge-light), var(--shadow-lg);
+}
+
+.builder__toast strong {
+  display: block;
+  color: #ffffff;
+  font-size: 0.7rem;
+  font-family: var(--font-mono);
+  font-weight: var(--fw-regular);
+}
+
+.builder__toast-icon {
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  background: #22c55e;
+  font-size: 0.9rem;
+}
+
+.builder.is-animating .builder__toast {
+  display: flex;
+  opacity: 0;
+  transform: translateY(12px) scale(0.9);
+  transition: opacity 400ms var(--ease-out), transform 500ms cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.builder.is-animating .builder__toast.is-shown {
+  opacity: 1;
+  transform: none;
+}
+
+@media (min-width: 64em) {
+  .builder__toast {
+    transform: translateZ(110px);
+  }
+
+  .builder.is-animating .builder__toast {
+    transform: translateZ(110px) translateY(12px) scale(0.9);
+  }
+
+  .builder.is-animating .builder__toast.is-shown {
+    transform: translateZ(110px);
+  }
+
+  /* O navegador "respira" de leve, flutuando na frente do editor */
+  .builder.is-animating .builder__preview {
+    animation: float 6s ease-in-out infinite;
+  }
+
+  @keyframes float {
+    0%, 100% { transform: translateZ(70px) translateY(0); }
+    50%      { transform: translateZ(70px) translateY(-8px); }
+  }
+}
+
+.builder.is-resetting .builder__toast,
+.builder.is-resetting .mock__pointer {
+  opacity: 0;
+}

@@ -1,0 +1,31 @@
+/* Variáveis globais de design */
+:root {
+  --primary-color: #3c184e;
+  --text-light: #ffffff;
+  --font-main: sans-serif;
+}
+
+/* Reset global */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: var(--font-main);
+  text-decoration: none;
+}
+
+.container {
+  padding: 120px 80px;
+}
+
+.destaque {
+  font-weight: 700;
+  font-style: italic;
+}
+
+h3 {
+  font-size: 36px;
+  color: var(--primary-color);
+  text-align: center;
+  margin: 0px 0px 45px;
+}

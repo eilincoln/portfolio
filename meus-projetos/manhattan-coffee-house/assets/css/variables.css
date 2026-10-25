@@ -1,0 +1,14 @@
+:root {
+  /* === paleta de cores === */
+  --color-primary: #c4a47c;
+  --color-secondary: #604829;
+  --color-dark: #000000;
+  --color-light: #ffffff;
+  --color-gray: #666666;
+  --color-muted: #acacac;
+
+  /* === fontes === */
+  --font-title: "Fraunces", serif;
+  --font-subtitle: "Oswald", sans-serif;
+  --font-body: "Lato", sans-serif;
+}

@@ -1,0 +1,109 @@
+/* ==========================================================================
+   Modificadores da Faixa de CTA (Azul Royal)
+   ========================================================================== */
+.cta-secondary {
+  background-color: var(--color-primary);
+}
+
+.cta-secondary .cta-text h3 {
+  color: var(--color-text-white);
+}
+
+.cta-secondary .cta-text p {
+  color: #e0f2fe;
+}
+
+.btn-dark {
+  background-color: #263238;
+}
+
+.btn-dark:hover {
+  background-color: #1a2327;
+}
+
+/* ==========================================================================
+   Rodapé Principal (Main Footer)
+   ========================================================================== */
+.main-footer {
+  width: 100%;
+  background-color: var(--color-bg-white);
+  padding-top: 4rem;
+}
+
+.footer-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding-bottom: 1.5rem;
+}
+
+/* Bloco da Marca */
+.footer-brand {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  margin-bottom: 2rem;
+}
+
+.footer-brand img {
+  width: 38px;
+  height: auto;
+}
+
+.footer-brand .brand-title {
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: #263238;
+  line-height: 1.1;
+  text-align: left;
+}
+
+.footer-brand .brand-subtitle {
+  font-size: 0.75rem;
+  color: #64748b;
+  text-align: left;
+}
+
+/* Informações de Contato */
+.footer-info {
+  font-style: normal;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-bottom: 2rem;
+}
+
+.footer-info p {
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: #334155;
+}
+
+/* Direitos Autorais */
+.footer-copyright p {
+  font-size: 0.8rem;
+  color: #64748b;
+}
+
+/* Faixa de Assinatura Inferior */
+.footer-author {
+  width: 100%;
+  background-color: var(--color-bg-white);
+  border-top: 1px solid #f1f5f9;
+  padding: 1.25rem 0;
+  text-align: center;
+}
+
+.footer-author p {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #334155;
+  width: 100%;
+}
+
+.footer-author span {
+  color: var(--color-primary);
+  font-weight: 700;
+}

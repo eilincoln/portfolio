@@ -1,0 +1,146 @@
+/* ==========================================================================
+   Modificadores de Cabeçalho e Rodapé com Tema Azul
+   ========================================================================== */
+.header-blue {
+  background-color: var(--color-primary);
+  border-bottom: none;
+}
+
+.header-blue .brand-text h1 {
+  color: var(--color-text-white);
+}
+
+.header-blue .brand-text span {
+  color: #e0f2fe;
+}
+
+.header-blue .main-nav a {
+  color: var(--color-text-white);
+}
+
+.header-blue .main-nav a:hover {
+  color: #e0f2fe;
+  opacity: 0.85;
+}
+
+.footer-blue {
+  background-color: var(--color-primary);
+  padding-top: 3rem;
+}
+
+.footer-blue .brand-title {
+  color: var(--color-text-white);
+}
+
+.footer-blue .brand-subtitle {
+  color: #e0f2fe;
+}
+
+.footer-blue .footer-copyright p {
+  color: #e0f2fe;
+}
+
+/* ==========================================================================
+   Tabela Matriz de Preços Detalhada (precos.html)
+   ========================================================================== */
+.pricing-page {
+  background-color: #f8fafc;
+}
+
+.pricing-details-main {
+  padding: 4rem 0 5rem 0;
+}
+
+.detailed-table-wrapper {
+  width: 100%;
+  max-width: 980px;
+  margin: 0 auto;
+  background-color: var(--color-bg-white);
+  border-radius: var(--radius-md);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+  overflow: hidden;
+  border: 1px solid #e2e8f0;
+}
+
+.detailed-matrix-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+/* Cabeçalho da Matriz */
+.detailed-matrix-table thead tr {
+  background-color: #f1f5f9;
+}
+
+.detailed-matrix-table th.feature-col-header {
+  width: 32%;
+  background-color: transparent;
+}
+
+.detailed-matrix-table th.plan-col-header {
+  width: 17%;
+  padding: 2rem 0.75rem 1.5rem 0.75rem;
+  text-align: center;
+  vertical-align: bottom;
+}
+
+.plan-label {
+  display: block;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #64748b;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 0.35rem;
+}
+
+.plan-price {
+  display: block;
+  font-size: 1.75rem;
+  font-weight: 800;
+  color: #0f172a;
+}
+
+/* Linhas e Células do Corpo */
+.detailed-matrix-table tbody tr {
+  border-bottom: 1px solid #f1f5f9;
+  transition: background-color 0.15s ease;
+}
+
+.detailed-matrix-table tbody tr:nth-child(even) {
+  background-color: #f8fafc;
+}
+
+.detailed-matrix-table tbody tr:hover {
+  background-color: #f0f7ff;
+}
+
+/* Título do Recurso (Coluna 1) */
+.detailed-matrix-table tbody th {
+  padding: 1.1rem 1.5rem;
+  text-align: left;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #334155;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+/* Dados dos Planos (Colunas 2 a 5) */
+.detailed-matrix-table tbody td {
+  padding: 1.1rem 0.75rem;
+  text-align: center;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #475569;
+  letter-spacing: 0.03em;
+}
+
+/* Ponto Azul de Marcação (Check Dot) */
+.check-dot {
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  background-color: var(--color-primary);
+  border-radius: 50%;
+}

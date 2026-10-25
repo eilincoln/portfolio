@@ -1,0 +1,148 @@
+/* Variaveis Globais (Corrigido o ## do amarelo) */
+:root {
+  --cor-fundo-grafite: #1a1a1a;
+  --cor-marca-amarelo: #f5cb15;
+  --cor-texto-principal: #ffffff;
+  --cor-texto-secundario: #a0a0a0;
+
+  --fonte-principal: "Montserrat", sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 90px;
+}
+
+/* Reset CSS */
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--cor-fundo-grafite);
+  color: var(--cor-texto-principal);
+  font-family: var(--fonte-principal);
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+  border: none;
+  background: none;
+}
+
+/* Utilitários */
+.container-header {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0px auto;
+  padding: 0px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.texto-branco {
+  color: var(--cor-texto-principal);
+}
+.texto-amarelo {
+  color: var(--cor-marca-amarelo);
+}
+
+.cabecalho-principal {
+  background-color: rgba(26, 26, 26, 0.95);
+  border-bottom: 1px solid #2a2a2a;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  padding: 20px 0;
+  backdrop-filter: blur(10px);
+}
+
+.logo a {
+  font-size: 1.5rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.menu-navegacao ul {
+  display: flex;
+  list-style: none;
+  gap: 30px;
+}
+
+.menu-navegacao a {
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  transition: color 0.3s ease;
+}
+
+.menu-navegacao a:hover,
+.menu-navegacao a.link-ativo {
+  color: var(--cor-marca-amarelo);
+}
+
+.ctas-header {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.botao-whatsapp-header {
+  background-color: var(--cor-marca-amarelo);
+  color: #1a1a1a;
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 0.85rem;
+  padding: 10px 22px;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+}
+
+.botao-whatsapp-header:hover {
+  background-color: #ffffff;
+  transform: translateY(-2px);
+}
+
+.botao-menu-mobile {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  width: 30px;
+  height: 24px;
+}
+
+.botao-menu-mobile span {
+  display: block;
+  width: 100%;
+  height: 2px;
+  background-color: var(--cor-texto-principal);
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+
+.botao-menu-mobile.ativo span:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+
+.botao-menu-mobile.ativo span:nth-child(2) {
+  opacity: 0;
+}
+
+.botao-menu-mobile.ativo span:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}

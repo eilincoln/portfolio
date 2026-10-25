@@ -1,0 +1,113 @@
+/* ==========================================================================
+   Seção Resumida de Planos (Home)
+   ========================================================================== */
+.pricing-summary-section {
+  width: 100%;
+  padding: 5rem 0 6rem 0;
+  background-color: var(--color-bg-white);
+  display: block;
+}
+
+.pricing-summary-section .container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.pricing-header {
+  width: 100%;
+  text-align: center;
+  margin-bottom: 3.5rem;
+}
+
+.pricing-header h2 {
+  font-size: 1.85rem;
+  font-weight: 800;
+  color: #1e293b;
+  letter-spacing: -0.02em;
+  text-align: center;
+}
+
+/* Container do Card com Sombra Azul Suave Centralizado */
+.pricing-table-wrapper {
+  width: 100%;
+  max-width: 900px;
+  background-color: var(--color-bg-white);
+  border-radius: var(--radius-md);
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 0 35px rgba(30, 136, 229, 0.18);
+  overflow: hidden;
+}
+
+/* Tabela de Planos */
+.plans-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: center;
+}
+
+/* Cabeçalho da Tabela */
+.plans-table thead {
+  background-color: var(--color-bg-white);
+  border-bottom: 2px solid #edf2f7;
+}
+
+.plan-header-cell {
+  padding: 2.5rem 1rem 1.5rem 1rem;
+  vertical-align: top;
+  width: 25%;
+}
+
+.plan-header-cell h3 {
+  font-size: 0.95rem;
+  font-weight: 800;
+  color: #1e293b;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 1.25rem;
+}
+
+.plan-avatar {
+  width: 75px;
+  height: 75px;
+  margin: 0 auto 1.25rem auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.plan-avatar img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+.plan-target {
+  font-size: 0.75rem;
+  color: #64748b;
+  line-height: 1.4;
+  font-weight: 500;
+  min-height: 32px;
+}
+
+/* Corpo da Tabela */
+.plans-table tbody tr {
+  border-bottom: 1px solid #f1f5f9;
+  transition: background-color 0.2s ease;
+}
+
+.plans-table tbody tr:nth-child(even) {
+  background-color: #f8fafc;
+}
+
+.plans-table tbody tr:hover {
+  background-color: #f0f7ff;
+}
+
+.plans-table tbody td {
+  padding: 1rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #475569;
+}

@@ -1,0 +1,16 @@
+/* Importação das Fontes */
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap");
+
+/* Camadas de Configuração Base */
+@import url("./css/variables.css");
+@import url("./css/reset.css");
+@import url("./css/base.css");
+
+/* Componentes */
+@import url("./css/header.css");
+@import url("./css/hero.css");
+@import url("./css/rooms.css");
+@import url("./css/about.css");
+@import url("./css/contact.css");
+@import url("./css/rooms-page.css");
+@import url("./css/footer.css");

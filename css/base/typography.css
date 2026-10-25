@@ -1,0 +1,98 @@
+/* ==========================================================================
+   TIPOGRAFIA
+   ========================================================================== */
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: var(--font-heading);
+  font-weight: var(--fw-bold);
+  color: var(--color-heading);
+  line-height: var(--lh-snug);
+  letter-spacing: -0.02em;
+  text-wrap: balance;
+}
+
+h1 {
+  font-size: var(--fs-h1);
+  line-height: var(--lh-tight);
+  letter-spacing: -0.035em;
+}
+
+h2 {
+  font-size: var(--fs-h2);
+  line-height: 1.1;
+  letter-spacing: -0.03em;
+}
+
+h3 {
+  font-size: var(--fs-h3);
+}
+
+h4 {
+  font-size: var(--fs-h4);
+}
+
+p {
+  text-wrap: pretty;
+}
+
+strong {
+  font-weight: var(--fw-semibold);
+  color: var(--color-heading);
+}
+
+code,
+kbd {
+  font-family: var(--font-mono);
+  font-size: 0.9em;
+}
+
+/* Destaque laranja dentro de títulos */
+.hl {
+  color: var(--color-accent-text);
+}
+
+/* Etiqueta pequena acima dos títulos */
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-1);
+  margin-bottom: var(--space-2);
+  font-family: var(--font-mono);
+  font-size: var(--fs-sm);
+  color: var(--color-accent-text);
+  letter-spacing: 0.02em;
+}
+
+.lead {
+  font-size: var(--fs-lg);
+  color: var(--color-text-muted);
+  max-width: 60ch;
+}
+
+.text-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35em;
+  color: var(--color-accent-text);
+  font-weight: var(--fw-semibold);
+  text-decoration: none;
+  background: linear-gradient(currentColor, currentColor) 0 100% / 0 2px no-repeat;
+  transition: background-size 250ms var(--ease-out);
+}
+
+.text-link:hover {
+  background-size: 100% 2px;
+}
+
+.text-link .icon {
+  width: 1em;
+  height: 1em;
+  transition: transform 250ms var(--ease-out);
+}
+
+.text-link:hover .icon {
+  transform: translateX(3px);
+}

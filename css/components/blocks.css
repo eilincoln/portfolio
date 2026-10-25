@@ -1,0 +1,360 @@
+/* ==========================================================================
+   BLOCOS DA HOME
+   dois caminhos · faixa de tecnologias · trajetória ·
+   laboratório · chamada final
+   ========================================================================== */
+
+/* ---------- Dois caminhos: contratar ou encomendar ---------- */
+.paths {
+  display: grid;
+  gap: var(--space-3);
+}
+
+.path {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  padding: var(--space-5) var(--space-4);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  background: var(--color-surface);
+  box-shadow: var(--edge-light), var(--shadow-md);
+}
+
+.path__icon {
+  display: grid;
+  place-items: center;
+  width: 3rem;
+  height: 3rem;
+  border-radius: var(--radius-md);
+  background: var(--color-accent-soft);
+  color: var(--color-accent-text);
+}
+
+.path__icon .icon {
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+.path__kicker {
+  margin-top: var(--space-3);
+  font-family: var(--font-mono);
+  font-size: var(--fs-xs);
+  color: var(--color-text-muted);
+}
+
+.path h3 {
+  margin-top: 0.35rem;
+}
+
+.path__list {
+  display: grid;
+  gap: 0.75rem;
+  margin-block: var(--space-3) var(--space-5);
+  padding: 0;
+  list-style: none;
+}
+
+.path__list li {
+  display: flex;
+  gap: 0.65rem;
+}
+
+.path__list .icon {
+  margin-top: 0.15rem;
+  color: var(--color-accent);
+}
+
+.path .btn-group {
+  margin-top: auto;
+}
+
+@media (min-width: 56em) {
+  .paths {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+/* ---------- Faixa de tecnologias rolando ---------- */
+.marquee {
+  display: grid;
+  gap: var(--space-2);
+  padding-block: var(--space-6);
+  border-block: 1px solid var(--color-border);
+  mask-image: linear-gradient(90deg, transparent, #000 10%, #000 90%, transparent);
+}
+
+.marquee__row {
+  display: flex;
+  width: max-content;
+  gap: var(--space-2);
+  animation: marquee 40s linear infinite;
+}
+
+.marquee__row--reverse {
+  animation-direction: reverse;
+}
+
+.marquee:hover .marquee__row {
+  animation-play-state: paused;
+}
+
+.marquee__row ul {
+  display: flex;
+  gap: var(--space-2);
+  list-style: none;
+  padding: 0;
+}
+
+.marquee__item {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.6rem 1.1rem;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-full);
+  background: var(--color-surface);
+  font-family: var(--font-heading);
+  font-weight: var(--fw-medium);
+  color: var(--color-heading);
+  white-space: nowrap;
+}
+
+.marquee__item::before {
+  content: "";
+  width: 0.45rem;
+  height: 0.45rem;
+  border-radius: 2px;
+  background: var(--color-accent);
+  transform: rotate(45deg);
+}
+
+@keyframes marquee {
+  to {
+    transform: translateX(calc(-50% - var(--space-1)));
+  }
+}
+
+/* Sem movimento: vira uma lista comum, sem a cópia duplicada */
+@media (prefers-reduced-motion: reduce) {
+  .marquee {
+    mask-image: none;
+  }
+
+  .marquee__row {
+    width: auto;
+    animation: none;
+    justify-content: center;
+  }
+
+  .marquee__row ul {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .marquee__row ul[aria-hidden="true"] {
+    display: none;
+  }
+}
+
+/* ---------- Sobre (resumo) + trajetória ---------- */
+.about {
+  display: grid;
+  gap: var(--space-6);
+}
+
+.about__intro {
+  display: grid;
+  gap: var(--space-4);
+  align-content: start;
+}
+
+.about__photo {
+  width: 9rem;
+  height: 9rem;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--color-border);
+  box-shadow: var(--shadow-md);
+  object-fit: cover;
+}
+
+.about__intro p + p {
+  margin-top: var(--space-2);
+}
+
+.about__intro .text-link {
+  margin-top: var(--space-1);
+}
+
+.timeline {
+  position: relative;
+  display: grid;
+  gap: var(--space-3);
+  padding: 0 0 0 var(--space-4);
+  list-style: none;
+}
+
+/* Linha vertical que "enche" de laranja conforme a rolagem (--progress do JS) */
+.timeline::before,
+.timeline::after {
+  content: "";
+  position: absolute;
+  top: 0.5rem;
+  bottom: 0.5rem;
+  left: 0.3rem;
+  width: 2px;
+  border-radius: 2px;
+  background: var(--color-border);
+}
+
+.timeline::after {
+  background: var(--color-accent);
+  transform-origin: top;
+  transform: scaleY(var(--progress, 1));
+}
+
+.timeline__item {
+  position: relative;
+}
+
+.timeline__item::before {
+  content: "";
+  position: absolute;
+  top: 0.45rem;
+  left: calc(var(--space-4) * -1);
+  z-index: 1;
+  width: 0.75rem;
+  height: 0.75rem;
+  border-radius: 50%;
+  border: 2px solid var(--color-accent);
+  background: var(--color-bg);
+}
+
+.timeline__item--now::before {
+  background: var(--color-accent);
+  box-shadow: 0 0 0 6px var(--color-accent-soft);
+}
+
+.timeline__year {
+  font-family: var(--font-mono);
+  font-size: var(--fs-xs);
+  color: var(--color-accent-text);
+}
+
+.timeline__item h3 {
+  font-size: var(--fs-h4);
+}
+
+.timeline__item p {
+  font-size: var(--fs-sm);
+  color: var(--color-text-muted);
+}
+
+@media (min-width: 56em) {
+  .about {
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-10);
+  }
+}
+
+/* ---------- Laboratório ---------- */
+.lab {
+  display: grid;
+  gap: var(--space-3);
+}
+
+.lab__card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  padding: var(--space-4);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  background: var(--color-surface);
+  box-shadow: var(--edge-light), var(--shadow-md);
+  text-decoration: none;
+  transition: border-color 300ms ease, transform 400ms var(--ease-out), box-shadow 400ms var(--ease-out);
+}
+
+a.lab__card:hover {
+  border-color: var(--color-accent);
+  box-shadow: var(--edge-light), var(--shadow-lg);
+  transform: translateY(-6px);
+}
+
+.lab__card .case__tag {
+  align-self: flex-start;
+}
+
+.lab__card p {
+  color: var(--color-text-muted);
+}
+
+.lab__card .text-link {
+  margin-top: auto;
+}
+
+/* Card "em construção": faixa listrada que anda */
+.lab__card--wip {
+  border-style: dashed;
+}
+
+.lab__progress {
+  height: 0.5rem;
+  margin-top: auto;
+  border-radius: var(--radius-full);
+  background: repeating-linear-gradient(
+    -45deg,
+    var(--color-accent) 0 10px,
+    var(--purple-300) 10px 20px
+  );
+  background-size: 28px 28px;
+  animation: stripes 1s linear infinite;
+  opacity: 0.85;
+}
+
+@keyframes stripes {
+  to {
+    background-position: 28px 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .lab__progress {
+    animation: none;
+  }
+}
+
+@media (min-width: 56em) {
+  .lab {
+    grid-template-columns: 1.4fr 1fr;
+  }
+}
+
+/* ---------- Chamada final ---------- */
+.cta-band {
+  padding: var(--space-8) var(--space-4);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  background: var(--light-top), var(--color-surface);
+  box-shadow: var(--edge-light), var(--shadow-lg);
+  text-align: center;
+}
+
+.cta-band h2 {
+  max-width: 18ch;
+  margin-inline: auto;
+}
+
+.cta-band p {
+  max-width: 44ch;
+  margin: var(--space-3) auto 0;
+  font-size: var(--fs-lg);
+  color: var(--color-text-muted);
+}
+
+.cta-band .btn-group {
+  justify-content: center;
+  margin-top: var(--space-5);
+}

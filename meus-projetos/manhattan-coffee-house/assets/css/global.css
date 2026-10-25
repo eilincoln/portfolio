@@ -1,0 +1,370 @@
+/* === reset básico === */
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--color-light);
+  color: var(--color-dark);
+}
+
+/* === HEADER === */
+#topo {
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 80px;
+  background-color: var(--color-secondary);
+  border-bottom: 3px solid var(--color-primary);
+  z-index: 1000;
+}
+
+.header-container {
+  max-width: 1200px;
+  margin: 0px auto;
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0px 20px;
+}
+
+.logo-img {
+  width: 100px;
+}
+
+.nav-menu ul {
+  display: flex;
+  list-style: none;
+  gap: 30px;
+}
+
+.nav-menu a {
+  font-family: var(--font-subtitle);
+  font-size: 18px;
+  color: var(--color-primary);
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s ease;
+  text-transform: uppercase;
+}
+
+.nav-menu a:hover {
+  color: var(--color-light);
+}
+
+/* === SECAO BANNER === */
+#banner {
+  background-image: url("../images/parallax-imagem1.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  height: 60vh;
+  margin-top: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+#banner::before {
+  content: "";
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1;
+}
+
+.banner-conteudo {
+  position: relative;
+  z-index: 2;
+  padding: 0px 20px;
+}
+
+.banner-conteudo h1 {
+  font-family: var(--font-title);
+  font-size: 48px;
+  color: var(--color-primary);
+  margin-bottom: 10px;
+  letter-spacing: 2px;
+}
+
+.banner-conteudo p {
+  font-family: var(--font-subtitle);
+  font-size: 20px;
+  color: var(--color-light);
+  letter-spacing: 1px;
+}
+
+/* === SECAO INFORMACAOES === */
+#informacoes {
+  width: 100%;
+}
+
+.info-bloco {
+  width: 100%;
+  min-height: 450px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.texto-bloco {
+  background-color: var(--color-light);
+  padding: 80px 20px;
+}
+
+.info-conteudo {
+  max-width: 900px;
+  text-align: center;
+}
+
+.info-conteudo h2 {
+  font-family: var(--font-subtitle);
+  font-size: 28px;
+  color: var(--color-primary);
+  margin-bottom: 25px;
+  letter-spacing: 2px;
+}
+
+.info-conteudo p {
+  font-family: var(--font-body);
+  font-size: 15px;
+  color: var(--color-gray);
+  line-height: 1.8;
+  text-align: justify;
+}
+
+.imagem-bloco-1 {
+  background-image: url("../images/parallax-imagem2.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+.imagem-bloco-2 {
+  background-image: url("../images/parallax-imagem3.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+.imagem-bloco-3 {
+  background-image: url("../images/parallax-imagem4.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+.frase-container {
+  background-color: rgba(96, 72, 41, 0.85);
+  padding: 20px 40px;
+  border-radius: 4px;
+  max-width: 80%;
+  text-align: center;
+}
+
+.frase-banner {
+  font-family: var(--font-title);
+  font-size: 24px;
+  font-style: italic;
+  color: var(--color-primary);
+  letter-spacing: 1px;
+}
+
+/* === SEÇÃO CONTATO === */
+
+#contatos {
+  background-image: url("../images/cafeteria.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  padding: 80px 20px;
+}
+
+.contatos-container {
+  max-width: 1200px;
+  margin: 0px auto;
+}
+
+#contatos h2 {
+  font-family: var(--font-title);
+  font-size: 32px;
+  color: var(--color-primary);
+  text-align: center;
+  margin-bottom: 40px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.contatos-conteudo {
+  display: flex;
+  min-width: 300px;
+  justify-content: space-between;
+  align-items: center;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+.mapa-area {
+  flex: 1;
+  min-width: 300px;
+  border: 3px solid var(--color-primary);
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+}
+
+.mapa-area iframe {
+  display: block;
+}
+
+.info-contato-caixa {
+  flex: 1;
+  min-width: 300px;
+  background-color: rgba(0, 0, 0, 0.6);
+  padding: 30px;
+  border-radius: 8px;
+  border-left: 5px solid var(--color-primary);
+}
+
+.item-contato {
+  margin-bottom: 25px;
+}
+
+.item-contato:last-child {
+  margin-bottom: 0;
+}
+
+.item-contato h3 {
+  font-family: var(--font-subtitle);
+  font-size: 22px;
+  color: var(--color-primary);
+  margin-bottom: 8px;
+}
+
+.item-contato p {
+  font-family: var(--font-body);
+  font-size: 16px;
+  color: var(--color-light);
+  line-height: 1.6;
+}
+
+/* === SEÇÃO HORÁRIOS === */
+#horarios {
+  background-color: var(--color-light);
+  padding: 80px 20px;
+  width: 100%;
+}
+
+.horarios-container {
+  max-width: 600px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+#horarios h2 {
+  font-family: var(--font-title);
+  font-size: 32px;
+  color: var(--color-secondary);
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-bottom: 15px;
+}
+
+.divisor-linha {
+  width: 80px;
+  height: 3px;
+  background-color: var(--color-primary);
+  margin: 0 auto 40px auto;
+}
+
+.lista-horarios {
+  list-style: none;
+  padding: 0;
+}
+
+.lista-horarios li {
+  display: flex;
+  justify-content: space-between;
+  padding: 15px 10px;
+  border-bottom: 1px dashed var(--color-muted);
+  font-size: 18px;
+}
+
+.lista-horarios li:last-child {
+  border-bottom: none;
+}
+
+.dia-semana {
+  font-family: var(--font-subtitle);
+  font-weight: bold;
+  color: var(--color-secondary);
+}
+
+.hora-funcionamento {
+  font-family: var(--font-body);
+  color: var(--color-gray);
+}
+
+/* === FOOTER === */
+footer {
+  background-color: var(--color-dark);
+  color: var(--color-muted);
+  padding: 40px 20px;
+  text-align: center;
+  border-top: 4px solid var(--color-secondary);
+  position: relative;
+}
+
+.footer-container p {
+  font-family: var(--font-body);
+  font-size: 14px;
+  line-height: 2;
+}
+
+.autor-tag {
+  color: var(--color-primary);
+}
+
+.btn-voltar-topo {
+  position: fixed;
+  bottom: 40px;
+  right: 40px;
+  background-color: var(--color-primary);
+  color: var(--color-dark);
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  text-decoration: none;
+  font-size: 24px;
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+  transition: all 0.3s ease;
+  z-index: 9999;
+}
+
+.btn-voltar-topo:hover {
+  background-color: var(--color-secondary);
+  color: var(--color-light);
+  transform: translateY(-5px);
+}
+
+html {
+  scroll-behavior: smooth;
+}

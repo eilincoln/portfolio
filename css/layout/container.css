@@ -1,0 +1,45 @@
+/* ==========================================================================
+   CONTAINER E SEÇÕES
+   ========================================================================== */
+
+.container {
+  width: min(100% - 2 * var(--gutter), var(--container-max));
+  margin-inline: auto;
+}
+
+.container--narrow {
+  width: min(100% - 2 * var(--gutter), var(--container-narrow));
+}
+
+.section {
+  padding-block: var(--space-section);
+}
+
+/* Seção "em outro plano": fundo um tom acima, bordas e luz vinda do topo */
+.section--alt {
+  background: var(--light-top), var(--color-bg-alt);
+  border-block: 1px solid var(--color-border);
+}
+
+/* Cabeçalho de seção: etiqueta + título + texto */
+.section-head {
+  max-width: 46rem;
+  margin-bottom: var(--space-8);
+}
+
+.section-head h2 + p {
+  margin-top: var(--space-3);
+}
+
+.section-head--row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: end;
+  justify-content: space-between;
+  gap: var(--space-3);
+  max-width: none;
+}
+
+.section-head--row > div {
+  max-width: 46rem;
+}

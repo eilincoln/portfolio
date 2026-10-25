@@ -1,0 +1,242 @@
+/* HERO */
+.banner-topo {
+  background-image: url("../img/banner-topo.jpg");
+  background-position: center;
+  background-size: cover;
+  height: 80vh;
+}
+
+.container-nome-logo {
+  max-width: 300px;
+  color: var(--primary-color);
+}
+
+.container-nome-logo img {
+  width: 30px;
+  margin-right: 5px;
+  vertical-align: middle;
+}
+.container-nome-logo .nome-pet-shop {
+  font-size: 35px;
+  margin: 0 0 5px 0;
+  font-weight: bold;
+}
+
+.container-nome-logo .slogan-pet-shop {
+  font-size: 14px;
+  text-align: center;
+  margin: 0;
+}
+
+.container-titulo-topo {
+  max-width: 1024px;
+  border-radius: 10px;
+  padding: 40px;
+  margin: 70px auto 0px;
+  background: #ffffffc4;
+  box-shadow: 0 8px 32px #1f26875e;
+}
+
+.titulo-topo {
+  font-size: 60px;
+  color: var(--primary-color);
+  text-align: center;
+  font-weight: 800;
+  margin: 0 0 40px;
+}
+
+.link-fale-conosco {
+  text-align: center;
+  width: 200px;
+  padding: 10px 25px;
+  font-size: 20px;
+  background-color: var(--primary-color);
+  border-radius: 10px;
+  margin: 0 auto;
+  display: block;
+}
+
+.link-fale-conosco a {
+  color: var(--text-light);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.container-titulo-topo img {
+  width: 20px;
+}
+
+/* SEÇÃO SERVIÇOS */
+.secao-servicos {
+  background-color: var(--text-light);
+}
+
+.box-servicos {
+  max-width: 1024px;
+  margin: 0px auto 50px;
+}
+
+.box-servicos ul {
+  list-style: square;
+  padding-left: 20px;
+  color: var(--text-dark);
+}
+
+.box-servicos li {
+  font-size: 18px;
+  line-height: 1.6;
+  margin-bottom: 15px;
+}
+
+.box-servicos-img {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.box-servicos-img img {
+  width: 200px;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* FAIXAS DE REDES SOCIAIS */
+
+.faixa {
+  background-color: var(--primary-color);
+  text-align: center;
+  padding: 60px 20px;
+}
+
+.text-faixa {
+  color: var(--text-light);
+  font-size: 24px;
+  margin-bottom: 30px;
+}
+
+.redes-sociais {
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+}
+
+.redes-sociais img {
+  width: 40px;
+  transition: transform 0.3s;
+}
+
+.redes-sociais img:hover {
+  transform: scale(1.2);
+}
+
+/* SEÇÃO DE MARCAS */
+.principais-marcas {
+  background-color: #f9f9f9;
+}
+
+.container-marcas {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 40px;
+  max-width: 1000px;
+  margin: 0px auto;
+  align-items: center;
+}
+
+.logo-marca {
+  width: 100%;
+  max-width: 150px;
+  margin: 0px auto;
+  filter: grayscale(100%);
+  opacity: 0.7;
+  transition: all 0.4s;
+}
+
+.logo-marca:hover {
+  filter: grayscale(0%);
+  opacity: 1;
+  transform: translateY(-5px);
+}
+
+/* ONDE ESTAMOS */
+.onde-estamos {
+  text-align: center;
+  background-color: var(--text-light);
+}
+
+.subtitulo-mapa {
+  font-size: 18px;
+  margin-bottom: 40px;
+  color: var(--text-dark);
+}
+
+.mapa {
+  max-width: 900px;
+  margin: 0px auto;
+  border: 10px solid var(--primary-color);
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+}
+
+.mapa iframe {
+  display: block;
+}
+
+/* RODAPE */
+.rodape {
+  background-color: #1d1d1d;
+  padding: 30px;
+  text-align: center;
+}
+
+.text-rodape {
+  color: var(--text-light);
+  font-size: 14px;
+}
+
+.rodape-container {
+  max-width: 1024px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.links-profissionais {
+  display: flex;
+  gap: 30px;
+  justify-content: center;
+}
+
+.links-profissionais a {
+  color: #999;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition:
+    color 0.3s,
+    transform 0.3s;
+}
+
+.links-profissionais a:hover {
+  color: var(--text-light);
+  transform: translateY(-3px);
+}
+
+.links-profissionais img {
+  width: 18px;
+  height: 18px;
+  filter: grayscale(100%) brightness(0.8);
+  transition: filter 0.3s;
+}
+
+.links-profissionais a:hover img {
+  filter: none;
+}

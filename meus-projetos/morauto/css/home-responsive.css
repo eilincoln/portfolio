@@ -1,0 +1,116 @@
+@media (max-width: 992px) {
+  .conteudo-hero h1 {
+    font-size: 2.2rem;
+  }
+
+  .lista-servicos {
+    gap: 60px;
+  }
+  .servico-bloco {
+    gap: 30px;
+  }
+}
+
+@media (max-width: 768px) {
+  .botao-menu-mobile {
+    display: flex;
+  }
+
+  .menu-navegacao {
+    display: block;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: #1a1a1a;
+    border-bottom: 1px solid #2a2a2a;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+  }
+
+  .menu-navegacao.menu-aberto {
+    max-height: 300px;
+  }
+
+  .menu-navegacao ul {
+    flex-direction: column;
+    gap: 0;
+    padding: 10px 20px 20px;
+  }
+
+  .menu-navegacao li {
+    border-top: 1px solid #2a2a2a;
+  }
+
+  .menu-navegacao a {
+    display: block;
+    padding: 14px 0;
+  }
+
+  .container-hero {
+    flex-direction: column;
+    text-align: center;
+    gap: 40px;
+    padding-top: 40px;
+  }
+
+  .conteudo-hero p {
+    margin: 0 auto 30px auto;
+  }
+
+  .botoes-hero {
+    justify-content: center;
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .cards-diferenciais {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .servico-bloco,
+  .servico-bloco.bloco-invertido {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .servico-caracteristicas {
+    align-items: center;
+  }
+
+  .foto-servico {
+    height: 260px;
+  }
+
+  .grade-galeria {
+    grid-template-columns: 1fr;
+    grid-auto-rows: 250px;
+  }
+
+  .container-contato {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .dado-item {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .mapa-google {
+    height: 300px;
+  }
+
+  .container-rodape {
+    flex-direction: column;
+    gap: 20px;
+    text-align: center;
+  }
+
+  .links-rodape {
+    justify-content: center;
+  }
+}

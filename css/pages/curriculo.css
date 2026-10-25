@@ -1,0 +1,179 @@
+/* ==========================================================================
+   CURRÍCULO — página própria, sem o tema do site
+   Na tela: uma folha A4 sobre fundo cinza. Na impressão: só a folha.
+   Texto preto em fundo branco, uma coluna, sem ícones (amigável a ATS).
+   ========================================================================== */
+
+@font-face {
+  font-display: swap;
+  font-family: "Inter";
+  font-weight: 400;
+  src: url("/fonts/inter-v20-latin-regular.woff2") format("woff2");
+}
+@font-face {
+  font-display: swap;
+  font-family: "Inter";
+  font-weight: 600;
+  src: url("/fonts/inter-v20-latin-600.woff2") format("woff2");
+}
+
+:root {
+  --cv-text: #1c1c1f;
+  --cv-muted: #55555c;
+  --cv-accent: #7433d6; /* roxo da marca, versão escura (legível no branco) */
+  --cv-line: #e4e4e7;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: #e9e9ec;
+  color: var(--cv-text);
+  font-family: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+  font-size: 10pt;
+  line-height: 1.45;
+}
+
+/* ---------- Barra de ações (só na tela) ---------- */
+.cv-actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 210mm;
+  margin: 0 auto;
+  padding: 1rem;
+  font-size: 0.875rem;
+}
+
+.cv-actions a {
+  color: var(--cv-text);
+}
+
+.cv-actions__download {
+  padding: 0.5rem 1rem;
+  border-radius: 999px;
+  background: #8844ee;
+  color: #ffffff !important;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+/* ---------- A folha ---------- */
+.cv {
+  max-width: 210mm;
+  min-height: 297mm;
+  margin: 0 auto 2rem;
+  padding: 14mm 16mm;
+  background: #ffffff;
+  box-shadow: 0 4px 24px rgb(0 0 0 / 0.12);
+}
+
+h1,
+h2,
+h3,
+p,
+ul {
+  margin: 0;
+}
+
+.cv__header h1 {
+  font-size: 20pt;
+  font-weight: 600;
+  line-height: 1.15;
+  letter-spacing: -0.01em;
+}
+
+.cv__role {
+  margin-top: 1pt;
+  color: var(--cv-accent);
+  font-size: 11.5pt;
+  font-weight: 600;
+}
+
+.cv__contact {
+  margin-top: 5pt;
+  color: var(--cv-muted);
+  font-size: 9pt;
+}
+
+section {
+  margin-top: 12pt;
+}
+
+h2 {
+  margin-bottom: 6pt;
+  padding-bottom: 3pt;
+  border-bottom: 1px solid var(--cv-line);
+  color: var(--cv-accent);
+  font-size: 10pt;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+h3 {
+  font-size: 10.5pt;
+  font-weight: 600;
+}
+
+.cv__job + .cv__job {
+  margin-top: 8pt;
+}
+
+.cv__date {
+  color: var(--cv-muted);
+  font-size: 9pt;
+}
+
+.cv ul {
+  margin-top: 3pt;
+  padding-left: 1.1em;
+}
+
+.cv li + li {
+  margin-top: 2pt;
+}
+
+.cv .cv__plain {
+  padding-left: 0;
+  list-style: none;
+}
+
+strong {
+  font-weight: 600;
+}
+
+/* ---------- Celular ---------- */
+@media (max-width: 40em) {
+  .cv {
+    min-height: 0;
+    padding: 1.5rem 1.25rem;
+  }
+}
+
+/* ---------- Impressão / PDF ---------- */
+@page {
+  size: A4;
+  margin: 0;
+}
+
+@media print {
+  body {
+    background: #ffffff;
+  }
+
+  .cv-actions {
+    display: none;
+  }
+
+  .cv {
+    min-height: 0; /* senão o arredondamento cria uma 2ª página em branco */
+    margin: 0;
+    box-shadow: none;
+  }
+}

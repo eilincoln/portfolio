@@ -1,0 +1,220 @@
+/* ==========================================================================
+   CABEÇALHO
+   Celular: botão abre um painel em tela cheia.
+   Desktop (a partir de 60em / 960px): menu horizontal.
+   ========================================================================== */
+
+.header {
+  position: sticky;
+  top: 0;
+  z-index: var(--z-header);
+  height: var(--header-height);
+  border-bottom: 1px solid transparent;
+  transition: background-color 300ms ease, border-color 300ms ease;
+}
+
+.header.is-scrolled {
+  background-color: color-mix(in srgb, var(--color-bg) 88%, transparent);
+  border-bottom-color: var(--color-border);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+.header__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-3);
+  height: 100%;
+}
+
+/* ---------- Marca ---------- */
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-family: var(--font-heading);
+  font-weight: var(--fw-bold);
+  font-size: 1.125rem;
+  color: var(--color-heading);
+  text-decoration: none;
+  letter-spacing: -0.02em;
+  white-space: nowrap;
+}
+
+.brand__mark {
+  display: grid;
+  place-items: center;
+  width: 2.25rem;
+  height: 2.25rem;
+  border-radius: var(--radius-sm);
+  background: var(--color-action);
+  color: var(--color-on-action);
+  font-family: var(--font-mono);
+  font-size: 0.875rem;
+  letter-spacing: -0.04em;
+  transition: transform 300ms var(--ease-out);
+}
+
+.brand:hover .brand__mark {
+  transform: rotate(-8deg) scale(1.05);
+}
+
+/* ---------- Navegação ---------- */
+.nav__list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+  list-style: none;
+  padding: 0;
+}
+
+.nav__link {
+  position: relative;
+  display: block;
+  padding: var(--space-1) 0;
+  color: var(--color-text-muted);
+  font-weight: var(--fw-medium);
+  text-decoration: none;
+  transition: color var(--transition);
+}
+
+.nav__link:hover,
+.nav__link[aria-current="page"] {
+  color: var(--color-heading);
+}
+
+.header__actions {
+  display: flex;
+  align-items: center;
+  gap: var(--space-1);
+}
+
+/* Botões redondos do cabeçalho: tema e menu */
+.icon-btn {
+  display: grid;
+  place-items: center;
+  width: 2.75rem;
+  height: 2.75rem;
+  border-radius: var(--radius-full);
+  border: 1px solid var(--color-border);
+  color: var(--color-heading);
+  transition: border-color var(--transition), background-color var(--transition);
+}
+
+.icon-btn:hover {
+  border-color: var(--color-accent);
+  background-color: var(--color-accent-soft);
+}
+
+/* Mostra o sol no tema escuro e a lua no claro */
+.theme-toggle .icon--moon,
+:root[data-theme="light"] .theme-toggle .icon--sun {
+  display: none;
+}
+
+:root[data-theme="light"] .theme-toggle .icon--moon {
+  display: block;
+}
+
+.menu-toggle .icon--close,
+.menu-toggle[aria-expanded="true"] .icon--menu {
+  display: none;
+}
+
+.menu-toggle[aria-expanded="true"] .icon--close {
+  display: block;
+}
+
+.header__actions .header__cta {
+  display: none; /* só no desktop (o .btn depois sobrescreveria um seletor simples) */
+}
+
+/* ---------- Celular: painel ---------- */
+@media (max-width: 59.99em) {
+  .nav {
+    position: fixed;
+    inset: var(--header-height) 0 0 0;
+    z-index: var(--z-drawer);
+    padding: var(--space-6) var(--gutter);
+    background-color: var(--color-bg);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-8px);
+    transition: opacity 250ms ease, transform 250ms var(--ease-out), visibility 0s 250ms;
+  }
+
+  .nav.is-open {
+    opacity: 1;
+    visibility: visible;
+    transform: none;
+    transition: opacity 250ms ease, transform 250ms var(--ease-out);
+  }
+
+  .nav__link {
+    font-family: var(--font-heading);
+    font-size: 2rem;
+    font-weight: var(--fw-bold);
+    color: var(--color-heading);
+    letter-spacing: -0.02em;
+  }
+
+  .nav__link[aria-current="page"] {
+    color: var(--color-accent-text);
+  }
+
+  body.menu-open {
+    overflow: hidden;
+  }
+
+  /* Sem JS o botão não funciona: o menu aparece aberto no fluxo */
+  .no-js .nav {
+    position: static;
+    opacity: 1;
+    visibility: visible;
+    transform: none;
+  }
+
+  .no-js .menu-toggle {
+    display: none;
+  }
+}
+
+/* ---------- Desktop ---------- */
+@media (min-width: 60em) {
+  .nav__list {
+    flex-direction: row;
+    gap: var(--space-4);
+  }
+
+  .nav__link {
+    font-size: var(--fs-sm);
+  }
+
+  /* Tracinho laranja embaixo do link ativo */
+  .nav__link::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0.15rem;
+    height: 2px;
+    background: var(--color-accent);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 250ms var(--ease-out);
+  }
+
+  .nav__link:hover::after,
+  .nav__link[aria-current="page"]::after {
+    transform: scaleX(1);
+  }
+
+  .menu-toggle {
+    display: none;
+  }
+
+  .header__actions .header__cta {
+    display: inline-flex;
+  }
+}

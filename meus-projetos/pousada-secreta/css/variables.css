@@ -1,0 +1,27 @@
+:root {
+  /* Cores Principais - Tema Litoral Sofisticado */
+  --color-primary: #0f3e36;
+  --color-primary-light: #1a5a4f;
+  --color-accent: #c29b38;
+  --color-accent-hover: #a8832b;
+
+  /* Cores Neutras e Fundo */
+  --color-bg-light: #f8faf9;
+  --color-bg-white: #ffffff;
+  --color-text-dark: #1e2923;
+  --color-text-muted: #5a6d64;
+  --color-border: #e2e8e5;
+
+  /* Tipografia */
+  --font-heading: "Playfair Display", serif;
+  --font-body: "Plus Jakarta Sans", sans-serif;
+
+  /* Espaçamentos e Estrutura */
+  --container-max-width: 1200px;
+  --header-height: 80px;
+  --border-radius-sm: 6px;
+  --border-radius-md: 12px;
+  --shadow-subtle: 0 4px 20px rgba(0, 0, 0, 0.06);
+  --shadow-hover: 0 10px 30px rgba(0, 0, 0, 0.12);
+  --transition-default: all 0.3s ease;
+}

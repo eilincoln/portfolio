@@ -1,0 +1,113 @@
+/* ==========================================================================
+   CASES — projetos em destaque (imagem + história)
+   Alternam o lado da imagem no desktop.
+   ========================================================================== */
+
+.cases {
+  display: grid;
+  gap: var(--space-10);
+}
+
+.case {
+  display: grid;
+  gap: var(--space-4);
+  align-items: center;
+}
+
+/* ---------- Imagem dentro de uma "janela" de navegador ---------- */
+.case__media {
+  position: relative;
+  display: block;
+  overflow: hidden;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--color-border);
+  background: var(--color-surface);
+  box-shadow: var(--edge-light), var(--shadow-md);
+  text-decoration: none;
+  transition: transform 400ms var(--ease-out), border-color 300ms ease, box-shadow 400ms var(--ease-out);
+}
+
+.case__media .window__bar {
+  border-bottom: 1px solid var(--color-border);
+  color: var(--color-text-muted);
+}
+
+.case__media img {
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+  object-position: top;
+  transition: transform 700ms var(--ease-out);
+}
+
+.case__media:hover {
+  border-color: var(--color-accent);
+  box-shadow: var(--edge-light), var(--shadow-lg);
+  transform: translateY(-6px);
+}
+
+.case__media:hover img {
+  transform: scale(1.03);
+}
+
+/* ---------- Texto ---------- */
+.case__tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.3rem 0.75rem;
+  border-radius: var(--radius-full);
+  background: var(--color-accent-soft);
+  color: var(--color-accent-text);
+  font-family: var(--font-mono);
+  font-size: var(--fs-xs);
+}
+
+.case__title {
+  margin-top: var(--space-2);
+}
+
+.case__text {
+  margin-top: var(--space-2);
+  color: var(--color-text-muted);
+}
+
+.case__facts {
+  display: grid;
+  gap: 0.6rem;
+  margin-top: var(--space-3);
+  padding: 0;
+  list-style: none;
+}
+
+.case__facts li {
+  display: flex;
+  gap: 0.65rem;
+}
+
+.case__facts .icon {
+  margin-top: 0.15rem;
+  color: var(--color-accent);
+}
+
+.case .chips {
+  margin-top: var(--space-3);
+}
+
+.case__links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-1) var(--space-4);
+  margin-top: var(--space-4);
+}
+
+@media (min-width: 56em) {
+  .case {
+    grid-template-columns: 1.15fr 1fr;
+    gap: var(--space-8);
+  }
+
+  .case:nth-child(even) .case__media {
+    order: 2;
+  }
+}

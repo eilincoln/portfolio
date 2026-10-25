@@ -1,0 +1,86 @@
+/* Reset padrão de margens e paddings */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; /* Garante que padding não altere o tamanho dos elementos */
+}
+
+body {
+  background-color: #f5f5f5;
+  font-family: Tahoma, sans-serif;
+  color: #333333;
+  line-height: 1.6; /* Melhora a leitura do texto */
+}
+
+/* Container genérico para as seções */
+.section-container {
+  max-width: 900px;
+  margin: 0 auto;
+  text-align: center;
+  border-top: 1px solid #d5d5d5;
+  padding: 50px 20px; /* 20px nas laterais para não grudar na tela do celular */
+}
+
+/* Remove a borda superior apenas da primeira seção */
+.hero-section {
+  border-top: none;
+}
+
+/* Títulos */
+h1 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+}
+
+h2 {
+  font-size: 1.5rem;
+  margin: 20px 0;
+}
+
+h3 {
+  font-size: 1.3rem;
+  margin-bottom: 20px;
+}
+
+/* Imagens */
+img {
+  max-width: 100px;
+  height: auto;
+  display: block;
+  margin: 0 auto 20px auto;
+}
+
+/* Classe específica para a capa do livro ser maior */
+.book-cover {
+  max-width: 200px;
+}
+
+/* Textos */
+p {
+  max-width: 850px;
+  width: 100%;
+  margin: 0 auto 20px auto;
+}
+
+.highlight-text {
+  font-weight: bold;
+}
+
+/* Botão de Compra */
+.btn-buy {
+  background-color: #49b970;
+  color: #ffffff;
+  text-transform: uppercase;
+  padding: 12px 40px;
+  display: inline-block;
+  text-decoration: none;
+  border-radius: 35px;
+  font-weight: bold;
+  margin-top: 10px;
+  transition: background-color 0.3s ease; /* Efeito suave ao passar o mouse */
+}
+
+/* Efeito Hover para o botão */
+.btn-buy:hover {
+  background-color: #379256;
+}

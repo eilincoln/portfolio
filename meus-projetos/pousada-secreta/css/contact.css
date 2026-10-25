@@ -1,0 +1,17 @@
+.location-section {
+  padding: 6rem 0;
+  background-color: var(--color-bg-light);
+}
+
+.map-wrapper {
+  width: 100%;
+  border-radius: var(--border-radius-md);
+  overflow: hidden;
+  box-shadow: var(--shadow-hover);
+  border: 1px solid var(--color-border);
+}
+
+.map-wrapper iframe {
+  display: block;
+  width: 100%;
+}
