@@ -1,0 +1,26 @@
+/* ==========================================================================
+   TRECHO DE CÓDIGO — janela de editor sempre escura, como na Home
+   Usado nos cases (código real) e na 404 (terminal de brincadeira).
+   Reaproveita .window e .code do hero.css.
+   ========================================================================== */
+
+.snippet {
+  margin: var(--space-6) 0 0;
+  background: #18181b;
+  color: #dfdfe2;
+}
+
+.snippet .window__bar {
+  border-bottom: 1px solid rgb(255 255 255 / 0.06);
+  color: #99999c;
+}
+
+.snippet .code {
+  overflow-x: auto;
+  white-space: normal; /* as quebras entre as linhas no HTML não viram linha em branco */
+}
+
+.t-key  { color: #c3b0ff; }
+.t-fn   { color: #8fc7ff; }
+.t-type { color: #f0e86c; }
+.t-num  { color: #ffb38a; }

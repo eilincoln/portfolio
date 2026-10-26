@@ -24,6 +24,11 @@ const TARGETS = [
   ".sobre-story",
   ".value",
   ".hobby",
+  // contato, serviços e laboratório
+  ".channel",
+  ".company",
+  ".service",
+  ".study",
 ].join(", ");
 
 const STAGGER = 90;  // ms entre um item e o próximo do mesmo grupo

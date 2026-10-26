@@ -23,3 +23,8 @@ initWhatsappFloat();
 document.querySelectorAll("[data-year]").forEach((el) => {
   el.textContent = new Date().getFullYear();
 });
+
+// Página 404: mostra no "terminal" o endereço que a pessoa tentou abrir
+document.querySelectorAll("[data-path]").forEach((el) => {
+  el.textContent = location.pathname;
+});

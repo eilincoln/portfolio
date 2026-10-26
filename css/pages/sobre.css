@@ -159,8 +159,3 @@
     grid-template-columns: repeat(4, 1fr);
   }
 }
-
-/* A chamada final vem logo depois de outra seção sem fundo: sem espaço dobrado */
-.section--flush {
-  padding-top: 0;
-}

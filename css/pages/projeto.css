@@ -224,28 +224,6 @@
   color: var(--color-text-muted);
 }
 
-/* Trecho de código real (editor sempre escuro, como na Home) */
-.snippet {
-  margin: var(--space-6) 0 0;
-  background: #18181b;
-  color: #dfdfe2;
-}
-
-.snippet .window__bar {
-  border-bottom: 1px solid rgb(255 255 255 / 0.06);
-  color: #99999c;
-}
-
-.snippet .code {
-  overflow-x: auto;
-  white-space: normal; /* as quebras entre as linhas no HTML não viram linha em branco */
-}
-
-.t-key  { color: #c3b0ff; }
-.t-fn   { color: #8fc7ff; }
-.t-type { color: #f0e86c; }
-.t-num  { color: #ffb38a; }
-
 /* ---------- Telas: computador + celular ---------- */
 .shots {
   display: grid;
@@ -342,51 +320,6 @@
 
 .case-next:hover .icon {
   transform: translateX(4px);
-}
-
-/* ---------- Etapas do trabalho (numeradas) ---------- */
-.steps {
-  display: grid;
-  gap: var(--space-2);
-  padding: 0;
-  list-style: none;
-  counter-reset: step;
-}
-
-.steps li {
-  position: relative;
-  padding: var(--space-3) var(--space-3) var(--space-3) 4.25rem;
-  border: 1px solid var(--color-border);
-  border-radius: var(--radius-md);
-  background: var(--color-surface);
-  box-shadow: var(--edge-light), var(--shadow-md);
-  counter-increment: step;
-}
-
-.steps li::before {
-  content: counter(step, decimal-leading-zero);
-  position: absolute;
-  top: var(--space-3);
-  left: var(--space-3);
-  font-family: var(--font-mono);
-  font-size: var(--fs-sm);
-  color: var(--color-accent-text);
-}
-
-.steps h3 {
-  font-size: var(--fs-h4);
-  margin-bottom: 0.3rem;
-}
-
-.steps p {
-  color: var(--color-text-muted);
-  font-size: var(--fs-sm);
-}
-
-@media (min-width: 40em) {
-  .steps {
-    grid-template-columns: 1fr 1fr;
-  }
 }
 
 /* Print largo, abaixo da dupla computador + celular */

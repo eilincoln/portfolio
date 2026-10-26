@@ -1,0 +1,51 @@
+/* ==========================================================================
+   PÁGINA 404
+   Texto à esquerda e um "terminal" de brincadeira à direita.
+   ========================================================================== */
+
+.error-page {
+  display: grid;
+  align-items: center;
+  min-height: calc(100vh - var(--header-height) - 4rem);
+  min-height: calc(100svh - var(--header-height) - 4rem);
+}
+
+.error-page__grid {
+  display: grid;
+  gap: var(--space-6);
+  align-items: center;
+}
+
+.error-page__terminal {
+  margin: 0;
+}
+
+/* Cursor piscando no fim do "cd /" */
+.error-page__caret {
+  display: inline-block;
+  width: 0.55em;
+  height: 1.1em;
+  margin-left: 0.15em;
+  vertical-align: text-bottom;
+  background: #a674f5;
+  animation: caret 1s steps(1) infinite;
+}
+
+@keyframes caret {
+  50% {
+    opacity: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .error-page__caret {
+    animation: none;
+  }
+}
+
+@media (min-width: 56em) {
+  .error-page__grid {
+    grid-template-columns: 1.1fr 1fr;
+    gap: var(--space-8);
+  }
+}

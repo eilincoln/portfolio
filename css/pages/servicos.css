@@ -1,0 +1,128 @@
+/* ==========================================================================
+   PÁGINA /servicos/
+   Tipos de projeto, o que vem incluso, como funciona (.steps)
+   e perguntas frequentes (<details>, funciona sem JS).
+   ========================================================================== */
+
+/* ---------- Tipos de projeto ---------- */
+.services {
+  display: grid;
+  gap: var(--space-3);
+}
+
+.service {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  padding: var(--space-4);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  background: var(--color-surface);
+  box-shadow: var(--edge-light), var(--shadow-md);
+}
+
+.service__kicker {
+  font-family: var(--font-mono);
+  font-size: var(--fs-xs);
+  color: var(--color-accent-text);
+}
+
+.service h2 {
+  font-size: var(--fs-h3);
+}
+
+.service p:not(.service__kicker) {
+  color: var(--color-text-muted);
+}
+
+.service .text-link {
+  align-self: flex-start;
+  margin-top: auto;
+  padding-top: var(--space-1);
+}
+
+@media (min-width: 56em) {
+  .services {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* ---------- Incluso ---------- */
+.included {
+  display: grid;
+  gap: var(--space-2) var(--space-5);
+  padding: 0;
+  list-style: none;
+}
+
+.included li {
+  display: flex;
+  gap: 0.75rem;
+  color: var(--color-text-muted);
+}
+
+.included .icon {
+  flex-shrink: 0;
+  margin-top: 0.2rem;
+  color: var(--color-accent);
+}
+
+@media (min-width: 40em) {
+  .included {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+/* ---------- Perguntas frequentes ---------- */
+.faq {
+  display: grid;
+  gap: var(--space-1);
+}
+
+.faq__item {
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  background: var(--color-surface);
+  transition: border-color 300ms ease;
+}
+
+.faq__item[open] {
+  border-color: var(--color-accent);
+}
+
+.faq__item summary {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-3);
+  font-family: var(--font-heading);
+  font-weight: var(--fw-semibold);
+  color: var(--color-heading);
+  cursor: pointer;
+  list-style: none;
+}
+
+.faq__item summary::-webkit-details-marker {
+  display: none;
+}
+
+/* Sinal de + que vira × ao abrir */
+.faq__item summary::after {
+  content: "+";
+  flex-shrink: 0;
+  font-family: var(--font-mono);
+  font-size: 1.25rem;
+  line-height: 1;
+  color: var(--color-accent-text);
+  transition: transform 300ms var(--ease-out);
+}
+
+.faq__item[open] summary::after {
+  transform: rotate(45deg);
+}
+
+.faq__item p {
+  padding: 0 var(--space-3) var(--space-3);
+  color: var(--color-text-muted);
+}

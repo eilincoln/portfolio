@@ -16,6 +16,11 @@
 }
 
 /* Seção "em outro plano": fundo um tom acima, bordas e luz vinda do topo */
+/* Seção colada na anterior (ex.: chamada final depois de outra seção sem fundo) */
+.section--flush {
+  padding-top: 0;
+}
+
 .section--alt {
   background: var(--light-top), var(--color-bg-alt);
   border-block: 1px solid var(--color-border);

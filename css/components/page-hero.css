@@ -27,3 +27,8 @@
     padding-top: var(--space-10);
   }
 }
+
+/* Botões logo abaixo do texto do topo (Serviços, 404) */
+.page-hero__actions {
+  margin-top: var(--space-5);
+}
