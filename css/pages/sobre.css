@@ -1,0 +1,166 @@
+/* ==========================================================================
+   PÁGINA /sobre/
+   Foto + apresentação no topo, história ao lado da trajetória,
+   jeito de trabalhar e o que faço fora do código.
+   Reaproveita .about e .timeline do blocks.css.
+   ========================================================================== */
+
+/* ---------- Topo ---------- */
+.sobre-hero {
+  display: grid;
+  gap: var(--space-5);
+  align-items: center;
+}
+
+.sobre-hero h1 {
+  max-width: none;
+  font-size: var(--fs-h1);
+}
+
+/* Foto com moldura e um brilho roxo atrás, como a luz da própria foto */
+.sobre-hero__photo {
+  position: relative;
+  width: min(100%, 22rem);
+  margin: 0;
+}
+
+.sobre-hero__photo::before {
+  content: "";
+  position: absolute;
+  inset: 12% -8% -8% 12%;
+  z-index: -1;
+  border-radius: var(--radius-lg);
+  background: var(--color-accent);
+  opacity: 0.25;
+  filter: blur(40px);
+}
+
+.sobre-hero__photo img {
+  width: 100%;
+  aspect-ratio: 1;
+  object-fit: cover;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--edge-light), var(--shadow-lg);
+}
+
+.sobre-hero__facts {
+  margin-top: var(--space-4);
+}
+
+@media (min-width: 56em) {
+  .sobre-hero {
+    grid-template-columns: 22rem 1fr;
+    gap: var(--space-8);
+  }
+
+  .sobre-hero__photo {
+    width: 100%;
+  }
+}
+
+/* ---------- História ---------- */
+.sobre-story h2 {
+  margin-bottom: var(--space-3);
+}
+
+.sobre-story p {
+  color: var(--color-text-muted);
+}
+
+.sobre-story p + p {
+  margin-top: var(--space-2);
+}
+
+/* ---------- Como eu trabalho ---------- */
+.values {
+  display: grid;
+  gap: var(--space-3);
+}
+
+.value {
+  padding: var(--space-4);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  background: var(--color-surface);
+  box-shadow: var(--edge-light), var(--shadow-md);
+}
+
+.value__num {
+  font-family: var(--font-mono);
+  font-size: var(--fs-sm);
+  color: var(--color-accent-text);
+}
+
+.value h3 {
+  margin-block: var(--space-1) 0.5rem;
+  font-size: var(--fs-h4);
+}
+
+.value p {
+  color: var(--color-text-muted);
+}
+
+@media (min-width: 56em) {
+  .values {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* ---------- Fora do código ---------- */
+.hobbies {
+  display: grid;
+  gap: var(--space-2);
+  padding: 0;
+  list-style: none;
+}
+
+.hobby {
+  padding: var(--space-3);
+  border: 1px dashed var(--color-border);
+  border-radius: var(--radius-md);
+  transition: border-color 300ms ease, transform 400ms var(--ease-out);
+}
+
+.hobby:hover {
+  border-color: var(--color-accent);
+  transform: translateY(-4px);
+}
+
+.hobby h3 {
+  font-size: var(--fs-h4);
+  margin-bottom: 0.35rem;
+}
+
+.hobby h3::before {
+  content: "";
+  display: inline-block;
+  width: 0.45rem;
+  height: 0.45rem;
+  margin-right: 0.6rem;
+  border-radius: 50%;
+  background: var(--color-live);
+  vertical-align: middle;
+}
+
+.hobby p {
+  color: var(--color-text-muted);
+  font-size: var(--fs-sm);
+}
+
+@media (min-width: 40em) {
+  .hobbies {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (min-width: 64em) {
+  .hobbies {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+/* A chamada final vem logo depois de outra seção sem fundo: sem espaço dobrado */
+.section--flush {
+  padding-top: 0;
+}

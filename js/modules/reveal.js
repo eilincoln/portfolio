@@ -20,6 +20,10 @@ const TARGETS = [
   ".case-next",
   ".steps li",
   ".project",
+  // página sobre
+  ".sobre-story",
+  ".value",
+  ".hobby",
 ].join(", ");
 
 const STAGGER = 90;  // ms entre um item e o próximo do mesmo grupo
