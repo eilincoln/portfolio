@@ -1,0 +1,29 @@
+/* ==========================================================================
+   TOPO DAS PÁGINAS INTERNAS — /projetos/, /sobre/, /contato/...
+   Etiqueta + título + texto, com a luz roxa vindo de cima.
+   ========================================================================== */
+
+.page-hero {
+  padding-block: var(--space-8) var(--space-4);
+  background: var(--light-top);
+}
+
+.page-hero h1 {
+  max-width: 18ch;
+  font-size: var(--fs-h2);
+}
+
+.page-hero .lead {
+  margin-top: var(--space-3);
+}
+
+/* Seção logo abaixo do topo: começa mais perto */
+.section--tight {
+  padding-top: var(--space-6);
+}
+
+@media (min-width: 64em) {
+  .page-hero {
+    padding-top: var(--space-10);
+  }
+}

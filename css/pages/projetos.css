@@ -1,0 +1,89 @@
+/* ==========================================================================
+   PÁGINA /projetos/ — índice dos cases
+   O primeiro projeto ocupa a linha inteira; os outros ficam lado a lado.
+   Reaproveita .case__media, .case__tag e .case__links do case.css.
+   ========================================================================== */
+
+.projects {
+  display: grid;
+  gap: var(--space-4);
+}
+
+.project {
+  display: grid;
+  align-content: start;
+  gap: var(--space-3);
+  padding: var(--space-2);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  background: var(--color-surface);
+  box-shadow: var(--edge-light), var(--shadow-md);
+  transition: border-color 300ms ease;
+}
+
+.project:hover {
+  border-color: var(--color-accent);
+}
+
+/* A imagem já sobe sozinha no hover (case.css); aqui ela não precisa de borda dupla */
+.project .case__media {
+  box-shadow: none;
+}
+
+.project__body {
+  display: grid;
+  gap: var(--space-2);
+  justify-items: start;
+  padding: 0 var(--space-2) var(--space-2);
+}
+
+.project__title {
+  font-size: var(--fs-h3);
+}
+
+.project__title a {
+  text-decoration: none;
+}
+
+.project__title a:hover {
+  color: var(--color-accent-text);
+}
+
+.project__text {
+  color: var(--color-text-muted);
+}
+
+.project .case__links {
+  margin-top: var(--space-1);
+}
+
+.project .case__tag .status__dot {
+  width: 0.45rem;
+  height: 0.45rem;
+}
+
+.lab__card .chips {
+  margin-top: var(--space-1);
+}
+
+@media (min-width: 56em) {
+  .projects {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  /* Destaque: imagem à esquerda, texto à direita, ocupando as duas colunas */
+  .project--featured {
+    grid-column: 1 / -1;
+    grid-template-columns: 1.3fr 1fr;
+    align-items: center;
+    gap: var(--space-5);
+  }
+
+  .project--featured .project__body {
+    padding: var(--space-3) var(--space-3) var(--space-3) 0;
+  }
+
+  .project--featured .project__title {
+    font-size: var(--fs-h2);
+  }
+}
