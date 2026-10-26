@@ -13,6 +13,11 @@ const TARGETS = [
   ".timeline__item",
   ".lab__card",
   ".cta-band",
+  // páginas de case
+  ".stat",
+  ".case-block",
+  ".shot",
+  ".case-next",
 ].join(", ");
 
 const STAGGER = 90;  // ms entre um item e o próximo do mesmo grupo
