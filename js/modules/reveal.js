@@ -18,6 +18,7 @@ const TARGETS = [
   ".case-block",
   ".shot",
   ".case-next",
+  ".steps li",
 ].join(", ");
 
 const STAGGER = 90;  // ms entre um item e o próximo do mesmo grupo
