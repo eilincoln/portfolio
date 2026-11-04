@@ -330,6 +330,11 @@ a.lab__card:hover {
   .lab {
     grid-template-columns: 1.4fr 1fr;
   }
+
+  /* Com um card só (sem "em construção"), ele ocupa a linha toda */
+  .lab__card:only-child {
+    grid-column: 1 / -1;
+  }
 }
 
 /* ---------- Chamada final ---------- */
